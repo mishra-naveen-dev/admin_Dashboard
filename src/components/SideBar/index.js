@@ -5,6 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.webp";
 import "../../App.css";
+import "./SideBar.css";
 
 //icon
 import { RiDashboardFill } from "react-icons/ri";
