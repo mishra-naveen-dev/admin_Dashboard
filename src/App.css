@@ -49,6 +49,7 @@ header .logo {
 
 header .logo img {
   width: 60px;
+  border-radius: 10px !important;
 }
 
 header .logo span {
