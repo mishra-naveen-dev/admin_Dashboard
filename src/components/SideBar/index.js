@@ -52,17 +52,26 @@ const SideBar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/products">
-              <Button className="w-100">
-                <span className="icon">
-                  <BsFillBox2HeartFill />
-                </span>
-                Products
-                <span className="arrow">
-                  <MdArrowForwardIos />
-                </span>
-              </Button>
-            </Link>
+            <Button className="w-100">
+              <span className="icon">
+                <BsFillBox2HeartFill />
+              </span>
+              Products
+              <span className="arrow">
+                <MdArrowForwardIos />
+              </span>
+            </Button>
+            <ul className="submenu">
+              <li>
+                <Link to="#">Product List</Link>
+              </li>
+              <li>
+                <Link to="#">Product View </Link>
+              </li>
+              <li>
+                <Link to="#">Product Upload</Link>
+              </li>
+            </ul>
           </li>
           <li>
             <Link to="/orders">

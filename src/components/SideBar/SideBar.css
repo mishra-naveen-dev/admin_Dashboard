@@ -8,14 +8,15 @@
 }
 
 .main .sidebarWrapper .sidebar ul li button {
-  color: rgba(0, 0, 0, 0.7) !important;
+  color: #5e5d72 !important;
   text-align: left;
   justify-content: left;
   border-radius: 10px !important;
-  padding: 12px 13px !important;
+  padding: 12px 10px !important;
   align-items: center;
   text-transform: capitalize !important;
   font-weight: 600;
+  font-size: 15px !important;
   font-family: "Open Sans", sans-serif !important;
 }
 
@@ -46,5 +47,26 @@
 }
 
 .main .sidebarWrapper .sidebar ul li button * {
-  color: rgba(0, 0, 0, 0.7) !important;
+  color: #5e5d72 !important;
+}
+.main .sidebarWrapper .sidebar ul .submenu {
+  padding-left: 23px;
+}
+.main .sidebarWrapper .sidebar ul .submenu li {
+  width: 100%;
+  list-style: none;
+  padding-left: 25px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+.main .sidebarWrapper .sidebar ul .submenu li a {
+  color: #5e5d72 !important;
+  text-decoration: none;
+  display: block;
+  padding: 5px 0px;
+  font-size: 14px !important;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.main .sidebarWrapper .sidebar ul .submenu li a:hover {
+  color: #0156ff !important;
 }
