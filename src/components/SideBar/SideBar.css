@@ -45,24 +45,34 @@
 .main .sidebarWrapper .sidebar ul li button:hover {
   background: #f1f1f1 !important;
 }
-
+.main .sidebarWrapper .sidebar ul li button.act {
+  background: #f1f1f1 !important;
+}
 .main .sidebarWrapper .sidebar ul li button * {
   color: #5e5d72 !important;
 }
 .main .sidebarWrapper .sidebar ul .submenu {
-  padding-left: 23px;
+  padding: 0px 45px;
+  position: relative;
+}
+.main .sidebarWrapper .sidebar ul .submenu::before {
+  content: "";
+  width: 2px;
+  height: 95%;
+  position: absolute;
+  top: 0px;
+  left: 25px;
+  background: rgba(0, 0, 0, 0.2);
 }
 .main .sidebarWrapper .sidebar ul .submenu li {
   width: 100%;
   list-style: none;
-  padding-left: 25px;
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 .main .sidebarWrapper .sidebar ul .submenu li a {
   color: #5e5d72 !important;
   text-decoration: none;
   display: block;
-  padding: 5px 0px;
+  padding: 6px 0px;
   font-size: 14px !important;
   font-weight: 500;
   transition: all 0.3s;

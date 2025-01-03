@@ -34,6 +34,9 @@ const SideBar = () => {
     setAnchorEl(null);
   };
 
+  const onOpenSubmenu = () => {
+    document.querySelector(".submenuWrapper").classList.toggle("open");
+  };
   return (
     <>
       <div className="sidebar">
@@ -52,7 +55,7 @@ const SideBar = () => {
             </Link>
           </li>
           <li>
-            <Button className="w-100">
+            <Button className="w-100" onClick={onOpenSubmenu}>
               <span className="icon">
                 <BsFillBox2HeartFill />
               </span>
@@ -61,17 +64,19 @@ const SideBar = () => {
                 <MdArrowForwardIos />
               </span>
             </Button>
-            <ul className="submenu">
-              <li>
-                <Link to="#">Product List</Link>
-              </li>
-              <li>
-                <Link to="#">Product View </Link>
-              </li>
-              <li>
-                <Link to="#">Product Upload</Link>
-              </li>
-            </ul>
+            <div className="submenuWrapper">
+              <ul className="submenu">
+                <li>
+                  <Link to="#">Product List</Link>
+                </li>
+                <li>
+                  <Link to="#">Product View </Link>
+                </li>
+                <li>
+                  <Link to="#">Product Upload</Link>
+                </li>
+              </ul>
+            </div>
           </li>
           <li>
             <Link to="/orders">
