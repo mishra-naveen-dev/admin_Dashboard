@@ -34,16 +34,21 @@ const SideBar = () => {
     setAnchorEl(null);
   };
 
-  const onOpenSubmenu = () => {
-    document.querySelector(".submenuWrapper").classList.toggle("open");
+  const [activeTab, setActiveTab] = useState(0);
+  const [isToggleSubmenu, setIsToggleSubmenu] = useState(0);
+
+  const isOpenSubmenu = (index) => {
+    setActiveTab(index);
+    setIsToggleSubmenu(!isToggleSubmenu);
   };
+
   return (
     <>
       <div className="sidebar">
         <ul>
           <li>
             <Link to="/dashboard">
-              <Button className="w-100">
+              <Button className={`w-100 ${activeTab === 0 ? "active" : ""}`}>
                 <span className="icon">
                   <RiDashboardFill />
                 </span>
@@ -55,7 +60,10 @@ const SideBar = () => {
             </Link>
           </li>
           <li>
-            <Button className="w-100" onClick={onOpenSubmenu}>
+            <Button
+              className={`w-100 ${activeTab === 1 ? "active" : ""}`}
+              onClick={() => isOpenSubmenu(1)}
+            >
               <span className="icon">
                 <BsFillBox2HeartFill />
               </span>
@@ -64,13 +72,17 @@ const SideBar = () => {
                 <MdArrowForwardIos />
               </span>
             </Button>
-            <div className="submenuWrapper">
+            <div
+              className={`submenuWrapper ${
+                activeTab === 1 && isToggleSubmenu ? "colapse" : "colapsed"
+              }`}
+            >
               <ul className="submenu">
                 <li>
                   <Link to="#">Product List</Link>
                 </li>
                 <li>
-                  <Link to="#">Product View </Link>
+                  <Link to="#">Product View</Link>
                 </li>
                 <li>
                   <Link to="#">Product Upload</Link>
@@ -80,7 +92,7 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/orders">
-              <Button className="w-100">
+              <Button className={`w-100 ${activeTab === 2 ? "active" : ""}`}>
                 <span className="icon">
                   <TbTruckDelivery />
                 </span>
@@ -93,7 +105,7 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/invoices">
-              <Button className="w-100">
+              <Button className={`w-100 ${activeTab === 3 ? "active" : ""}`}>
                 <span className="icon">
                   <FaFileInvoice />
                 </span>
@@ -106,7 +118,7 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/messages">
-              <Button className="w-100">
+              <Button className={`w-100 ${activeTab === 4 ? "active" : ""}`}>
                 <span className="icon">
                   <SiGooglemessages />
                 </span>
@@ -119,7 +131,7 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/notifications">
-              <Button className="w-100">
+              <Button className={`w-100 ${activeTab === 5 ? "active" : ""}`}>
                 <span className="icon">
                   <MdNotifications />
                 </span>
@@ -132,7 +144,7 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/settings">
-              <Button className="w-100">
+              <Button className={`w-100 ${activeTab === 6 ? "active" : ""}`}>
                 <span className="icon">
                   <IoMdSettings />
                 </span>
@@ -145,7 +157,7 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/charts">
-              <Button className="w-100">
+              <Button className={`w-100 ${activeTab === 7 ? "active" : ""}`}>
                 <span className="icon">
                   <IoPieChartSharp />
                 </span>
@@ -158,7 +170,7 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/documentation">
-              <Button className="w-100">
+              <Button className={`w-100 ${activeTab === 8 ? "active" : ""}`}>
                 <span className="icon">
                   <IoDocument />
                 </span>
@@ -171,7 +183,7 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/contact">
-              <Button className="w-100">
+              <Button className={`w-100 ${activeTab === 9 ? "active" : ""}`}>
                 <span className="icon">
                   <IoIosContacts />
                 </span>
@@ -184,7 +196,7 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/about">
-              <Button className="w-100">
+              <Button className={`w-100 ${activeTab === 10 ? "active" : ""}`}>
                 <span className="icon">
                   <MdOutlineInfo />
                 </span>
@@ -196,7 +208,10 @@ const SideBar = () => {
             </Link>
           </li>
           <li>
-            <Button className="w-100" onClick={handleClick}>
+            <Button
+              className={`w-100 ${activeTab === 11 ? "active" : ""}`}
+              onClick={handleClick}
+            >
               <span className="icon">
                 <FaLanguage />
               </span>
@@ -220,19 +235,8 @@ const SideBar = () => {
             </Menu>
           </li>
           <li>
-            <Link to="/about">
-              <Button className="w-100">
-                <span className="icon">
-                  <MdOutlineInfo />
-                </span>
-                Logout
-                <span className="arrow"></span>
-              </Button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/about">
-              <Button className="w-100">
+            <Link to="/logout">
+              <Button className={`w-100 ${activeTab === 12 ? "active" : ""}`}>
                 <span className="icon">
                   <MdOutlineInfo />
                 </span>
@@ -242,6 +246,7 @@ const SideBar = () => {
             </Link>
           </li>
         </ul>
+        
       </div>
     </>
   );

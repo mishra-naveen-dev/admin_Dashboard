@@ -45,7 +45,7 @@
 .main .sidebarWrapper .sidebar ul li button:hover {
   background: #f1f1f1 !important;
 }
-.main .sidebarWrapper .sidebar ul li button.act {
+.main .sidebarWrapper .sidebar ul li button.active {
   background: #f1f1f1 !important;
 }
 .main .sidebarWrapper .sidebar ul li button * {
@@ -79,4 +79,20 @@
 }
 .main .sidebarWrapper .sidebar ul .submenu li a:hover {
   color: #0156ff !important;
+}
+.main .sidebarWrapper .sidebar ul .submenuWrapper {
+  transition: all 0.3s ease-in-out;
+}
+.main .sidebarWrapper .sidebar ul .submenuWrapper.colapsed {
+  height: 0px;
+}
+.main .sidebarWrapper .sidebar ul .submenuWrapper.colapsed .submenu {
+  opacity: 0;
+}
+
+.main .sidebarWrapper .sidebar ul .submenuWrapper.colapse {
+  height: auto;
+}
+.main .sidebarWrapper .sidebar ul .submenuWrapper.colapse .submenu {
+  opacity: 1;
 }
