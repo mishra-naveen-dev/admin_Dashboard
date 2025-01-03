@@ -241,4 +241,8 @@ header .part2 {
   top: 70px;
   left: 0px;
   background: #fff;
+  max-width: calc(100% - 70px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-bottom: 25px;
 }

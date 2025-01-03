@@ -205,13 +205,29 @@ const SideBar = () => {
               <MenuItem onClick={handleClose}>German</MenuItem>
             </Menu>
           </li>
+          <li>
+            <Link to="/about">
+              <Button className="w-100">
+                <span className="icon">
+                  <MdOutlineInfo />
+                </span>
+                Logout
+                <span className="arrow"></span>
+              </Button>
+            </Link>
+          </li>
+          <li>
+            <Link to="/about">
+              <Button className="w-100">
+                <span className="icon">
+                  <MdOutlineInfo />
+                </span>
+                Logout
+                <span className="arrow"></span>
+              </Button>
+            </Link>
+          </li>
         </ul>
-        <div className="sidebar-logo">
-          <Link to={"/"} className="d-flex align-items-center logo">
-            <img src={logo} alt="402" />
-            <span className="ml-2">RAJWADASTORE</span>
-          </Link>
-        </div>
       </div>
     </>
   );
