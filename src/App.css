@@ -3,7 +3,7 @@
 /* css reset */
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif !important;
   background: #ebe9e9 !important;
 }
 ::-webkit-scrollbar {
@@ -49,6 +49,7 @@ header .logo {
 
 header .logo img {
   width: 60px;
+  border-radius: 10px !important;
 }
 
 header .logo span {
@@ -240,4 +241,18 @@ header .part2 {
   top: 70px;
   left: 0px;
   background: #fff;
+  max-width: calc(100% - 70px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-bottom: 25px;
+}
+.main .sidebarWrapper .sidebar ::-webkit-scrollbar {
+  width: 3px !important;
+  height: 3px !important;
+}
+.main .sidebarWrapper .sidebar ::-webkit-scrollbar-thumb {
+  background: transparent !important;
+}
+.main .sidebarWrapper .sidebar ::-webkit-scrollbar {
+  background: #0858f7 !important;
 }
