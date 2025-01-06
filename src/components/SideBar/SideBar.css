@@ -1,0 +1,33 @@
+.main .sidebarWrapper .sidebar ul {
+  margin-bottom: 0px !important;
+  padding-left: 0px;
+}
+.main .sidebarWrapper .sidebar ul li {
+  list-style: none;
+}
+.main .sidebarWrapper .sidebar ul li button {
+  color: #000;
+  text-align: left;
+  justify-content: left;
+  border-radius: 0px !important;
+  padding: 12px 15px !important;
+  align-items: center;
+}
+.main .sidebarWrapper .sidebar ul li button .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px !important;
+  height: 25px;
+  margin-right: 10px !important;
+}
+
+.main .sidebarWrapper .sidebar ul li button .icon svg {
+  color: #000;
+  opacity: 0.8;
+  font-size: 22px;
+}
+.main .sidebarWrapper .sidebar ul li button .arrow {
+  margin-left: auto;
+  align-items: center;
+}
