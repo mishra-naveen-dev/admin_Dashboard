@@ -1,5 +1,6 @@
 import "./App.css";
 import "./components/SideBar/SideBar.css";
+import "./pages/Dashboard/dashboard.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Dashboard from "./pages/Dashboard";

@@ -167,6 +167,7 @@ header .part2 {
   right: 240px !important;
   width: 300px !important;
   left: auto !important;
+  top: 70px !important;
 }
 
 .dropdown_list .head {
@@ -258,4 +259,9 @@ header .part2 {
 
 .main .sidebarWrapper .sidebar ::-webkit-scrollbar-track {
   background: #f1f1f1; /* Add a track color for better contrast */
+}
+
+.main .contentWrapper {
+  width: 80%;
+  flex: 0 0 80%;
 }
