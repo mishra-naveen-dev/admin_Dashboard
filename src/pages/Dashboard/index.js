@@ -15,6 +15,7 @@ const Dashboard = () => {
               <DashboardBox
                 color={["#1da256", "#48d483"]}
                 icon={<FaUserCircle />}
+                grow={true}
               />
               <DashboardBox
                 color={["#c012e2", "#eb64fe"]}
@@ -27,6 +28,7 @@ const Dashboard = () => {
               <DashboardBox
                 color={["#e1950e", "#f3cd29"]}
                 icon={<GrStar />}
+                grow={true}
               />
             </div>
           </div>
