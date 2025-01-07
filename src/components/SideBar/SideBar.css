@@ -41,6 +41,7 @@
   justify-content: center;
   width: 25px !important;
   height: 25px;
+  transition: all 0.3s ease-in-out;
 }
 .main .sidebarWrapper .sidebar ul li button:hover {
   background: #f1f1f1 !important;
@@ -48,16 +49,23 @@
 .main .sidebarWrapper .sidebar ul li button.active {
   background: #f1f1f1 !important;
 }
+.main .sidebarWrapper .sidebar ul li button.active .arrow{
+  background: #f1f1f1 !important;
+  transform: rotate(90deg);
+}
+
 .main .sidebarWrapper .sidebar ul li button * {
   color: #5e5d72 !important;
 }
 .main .sidebarWrapper .sidebar ul .submenu {
   padding: 0px 45px;
   position: relative;
+  transition: all 0.3s ease-in-out;
+  height: 0px;
 }
 .main .sidebarWrapper .sidebar ul .submenu::before {
   content: "";
-  width: 2px;
+  width: 1px;
   height: 95%;
   position: absolute;
   top: 0px;
@@ -81,18 +89,68 @@
   color: #0156ff !important;
 }
 .main .sidebarWrapper .sidebar ul .submenuWrapper {
-  transition: all 0.3s ease-in-out;
-}
-.main .sidebarWrapper .sidebar ul .submenuWrapper.colapsed {
+  transition: all 0.3s;
   height: 0px;
+  overflow: hidden;
 }
+
 .main .sidebarWrapper .sidebar ul .submenuWrapper.colapsed .submenu {
   opacity: 0;
 }
 
 .main .sidebarWrapper .sidebar ul .submenuWrapper.colapse {
   height: auto;
+  overflow: inherit;
 }
 .main .sidebarWrapper .sidebar ul .submenuWrapper.colapse .submenu {
   opacity: 1;
+  height: auto;
+}
+.logoutWrapper {
+  padding: 0px 25px;
+}
+
+.logoutWrapper .logoutBox {
+  width: 100%;
+  height: 130px;
+  padding: 25px;
+  background: #bcd2fd;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.logoutWrapper .logoutBox::before {
+  content: "";
+  width: 70px;
+  height: 70px;
+  background: #0858f7;
+  border-radius: 100%;
+  position: absolute;
+  top: -25px;
+  right: -20px;
+  opacity: 0.5;
+}
+
+.logoutWrapper .logoutBox::after {
+  content: "";
+  width: 35px;
+  height: 35px;
+  background: #0858f7;
+  border-radius: 100%;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  opacity: 0.5;
+}
+.logoutWrapper .logoutBox button {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+.logoutWrapper .logoutBox button svg {
+  margin-right: 5px;
+  font-size: 16px !important;
 }

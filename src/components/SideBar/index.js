@@ -21,6 +21,7 @@ import { IoDocument } from "react-icons/io5";
 import { IoPieChartSharp } from "react-icons/io5";
 import { FaLanguage } from "react-icons/fa6";
 import { MdOutlineInfo } from "react-icons/md";
+import { FaUnlockKeyhole } from "react-icons/fa6";
 
 const SideBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -48,7 +49,10 @@ const SideBar = () => {
         <ul>
           <li>
             <Link to="/dashboard">
-              <Button className={`w-100 ${activeTab === 0 ? "active" : ""}`}>
+              <Button
+                className={`w-100 ${activeTab === 0 ? "active" : ""}`}
+                onClick={() => isOpenSubmenu(0)}
+              >
                 <span className="icon">
                   <RiDashboardFill />
                 </span>
@@ -61,7 +65,9 @@ const SideBar = () => {
           </li>
           <li>
             <Button
-              className={`w-100 ${activeTab === 1 ? "active" : ""}`}
+              className={`w-100 ${
+                activeTab === 1 && isToggleSubmenu === true ? "active" : ""
+              }`}
               onClick={() => isOpenSubmenu(1)}
             >
               <span className="icon">
@@ -74,7 +80,9 @@ const SideBar = () => {
             </Button>
             <div
               className={`submenuWrapper ${
-                activeTab === 1 && isToggleSubmenu ? "colapse" : "colapsed"
+                activeTab === 1 && isToggleSubmenu === true
+                  ? "colapse"
+                  : "colapsed"
               }`}
             >
               <ul className="submenu">
@@ -92,7 +100,10 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/orders">
-              <Button className={`w-100 ${activeTab === 2 ? "active" : ""}`}>
+              <Button
+                className={`w-100 ${activeTab === 2 ? "active" : ""}`}
+                onClick={() => isOpenSubmenu(2)}
+              >
                 <span className="icon">
                   <TbTruckDelivery />
                 </span>
@@ -105,7 +116,10 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/invoices">
-              <Button className={`w-100 ${activeTab === 3 ? "active" : ""}`}>
+              <Button
+                className={`w-100 ${activeTab === 3 ? "active" : ""}`}
+                onClick={() => isOpenSubmenu(3)}
+              >
                 <span className="icon">
                   <FaFileInvoice />
                 </span>
@@ -118,7 +132,10 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/messages">
-              <Button className={`w-100 ${activeTab === 4 ? "active" : ""}`}>
+              <Button
+                className={`w-100 ${activeTab === 4 ? "active" : ""}`}
+                onClick={() => isOpenSubmenu(4)}
+              >
                 <span className="icon">
                   <SiGooglemessages />
                 </span>
@@ -131,7 +148,10 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/notifications">
-              <Button className={`w-100 ${activeTab === 5 ? "active" : ""}`}>
+              <Button
+                className={`w-100 ${activeTab === 5 ? "active" : ""}`}
+                onClick={() => isOpenSubmenu(5)}
+              >
                 <span className="icon">
                   <MdNotifications />
                 </span>
@@ -144,7 +164,10 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/settings">
-              <Button className={`w-100 ${activeTab === 6 ? "active" : ""}`}>
+              <Button
+                className={`w-100 ${activeTab === 6 ? "active" : ""}`}
+                onClick={() => isOpenSubmenu(6)}
+              >
                 <span className="icon">
                   <IoMdSettings />
                 </span>
@@ -157,7 +180,10 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/charts">
-              <Button className={`w-100 ${activeTab === 7 ? "active" : ""}`}>
+              <Button
+                className={`w-100 ${activeTab === 7 ? "active" : ""}`}
+                onClick={() => isOpenSubmenu(7)}
+              >
                 <span className="icon">
                   <IoPieChartSharp />
                 </span>
@@ -170,7 +196,10 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/documentation">
-              <Button className={`w-100 ${activeTab === 8 ? "active" : ""}`}>
+              <Button
+                className={`w-100 ${activeTab === 8 ? "active" : ""}`}
+                onClick={() => isOpenSubmenu(8)}
+              >
                 <span className="icon">
                   <IoDocument />
                 </span>
@@ -183,7 +212,10 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/contact">
-              <Button className={`w-100 ${activeTab === 9 ? "active" : ""}`}>
+              <Button
+                className={`w-100 ${activeTab === 9 ? "active" : ""}`}
+                onClick={() => isOpenSubmenu(9)}
+              >
                 <span className="icon">
                   <IoIosContacts />
                 </span>
@@ -196,7 +228,10 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/about">
-              <Button className={`w-100 ${activeTab === 10 ? "active" : ""}`}>
+              <Button
+                className={`w-100 ${activeTab === 10 ? "active" : ""}`}
+                onClick={() => isOpenSubmenu(10)}
+              >
                 <span className="icon">
                   <MdOutlineInfo />
                 </span>
@@ -234,39 +269,15 @@ const SideBar = () => {
               <MenuItem onClick={handleClose}>German</MenuItem>
             </Menu>
           </li>
-          <li>
-            <Link to="/logout">
-              <Button className={`w-100 ${activeTab === 12 ? "active" : ""}`}>
-                <span className="icon">
-                  <MdOutlineInfo />
-                </span>
+          <br />
+          <div className="logoutWrapper">
+            <div className="logoutBox">
+              <Button variant="contained">
+                <FaUnlockKeyhole />
                 Logout
-                <span className="arrow"></span>
               </Button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/logout">
-              <Button className={`w-100 ${activeTab === 12 ? "active" : ""}`}>
-                <span className="icon">
-                  <MdOutlineInfo />
-                </span>
-                Logout
-                <span className="arrow"></span>
-              </Button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/logout">
-              <Button className={`w-100 ${activeTab === 12 ? "active" : ""}`}>
-                <span className="icon">
-                  <MdOutlineInfo />
-                </span>
-                Logout
-                <span className="arrow"></span>
-              </Button>
-            </Link>
-          </li>
+            </div>
+          </div>
         </ul>
       </div>
     </>

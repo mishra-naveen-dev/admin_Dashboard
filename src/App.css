@@ -241,18 +241,21 @@ header .part2 {
   top: 70px;
   left: 0px;
   background: #fff;
-  max-width: calc(100% - 70px);
-  overflow-y: scroll;
-  overflow-x: hidden;
-  padding-bottom: 25px;
+  max-width: calc(100% - 70px) !important;
+  overflow-y: auto !important; /* Ensure vertical scrolling is enabled */
+  overflow-x: hidden !important;
+  padding-bottom: 55px !important;
 }
+
 .main .sidebarWrapper .sidebar ::-webkit-scrollbar {
-  width: 3px !important;
-  height: 3px !important;
+  width: 8px; /* Increase scrollbar width for better visibility */
 }
+
 .main .sidebarWrapper .sidebar ::-webkit-scrollbar-thumb {
-  background: transparent !important;
+  background: #0858f7 !important; /* Ensure scrollbar thumb is visible */
+  border-radius: 4px; /* Add some rounding for better aesthetics */
 }
-.main .sidebarWrapper .sidebar ::-webkit-scrollbar {
-  background: #0858f7 !important;
+
+.main .sidebarWrapper .sidebar ::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Add a track color for better contrast */
 }
