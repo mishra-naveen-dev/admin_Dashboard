@@ -21,8 +21,8 @@
 .dashboardBoxWrapperRow .box {
   width: 100%;
   height: 100%;
-  background: #ccc;
 }
+
 .dashboardBoxWrapper .dashboardBox .col1 h4 {
   font-size: 16px;
   font-weight: 500;
@@ -51,6 +51,8 @@
   font-size: 35px !important;
   font-weight: bold;
   line-height: 45px;
+  display: block;
+  margin-right: 55px !important;
 }
 
 .dashboardBoxWrapper .dashboardBox .toggleIcon {
@@ -75,5 +77,34 @@
 }
 .dashboardBoxWrapper .dashboardBox .bottomEle {
   position: relative;
-  top: 25px;
+  top: 15px;
+}
+.dashboardBoxWrapper .dashboardBox .MuiList-root svg {
+  font-size: 17px !important;
+  color: #000 !important;
+}
+.dropDown_menu .MuiButtonBase-root svg {
+  margin-right: 5px !important;
+  font-size: 20px !important;
+  color: #000 !important;
+}
+.graphBox {
+  background-image: linear-gradient(#1a50b5, #2a6ff7);
+  border-radius: 10px;
+  padding: 25px;
+}
+.toggleIcon {
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  min-width: 40px !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+}
+.toggleIcon svg {
+  color: #fff !important;
+  font-size: 20px !important;
+  opacity: 1 !important;
+  rotate: 90deg;
 }
