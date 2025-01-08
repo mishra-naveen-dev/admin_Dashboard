@@ -17,6 +17,7 @@
   justify-content: space-around;
   position: relative;
   color: #fff;
+  text-transform: capitalize !important;
 }
 .dashboardBoxWrapperRow .box {
   width: 100%;
@@ -24,8 +25,8 @@
 }
 
 .dashboardBoxWrapper .dashboardBox .col1 h4 {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .dashboardBoxWrapper .dashboardBox .icon {
@@ -106,5 +107,17 @@
   color: #fff !important;
   font-size: 20px !important;
   opacity: 1 !important;
+}
+.graphBox .toggleIcon svg{
   rotate: 90deg;
+}
+
+.graphBox h4 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.graphBox p {
+  font-size: 14px;
+  color: #fff;
+  opacity: 0.7;
 }

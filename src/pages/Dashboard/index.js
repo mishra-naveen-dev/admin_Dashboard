@@ -8,8 +8,29 @@ import MenuItem from "@mui/material/MenuItem";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import Button from "@mui/material/Button";
 
+//google chart import
+import { Chart } from "react-google-charts";
+
 import React from "react";
 import DashboardBox from "./components/dashboardBox";
+
+export const data = [
+  ["Year", "Sales", "Expenses"],
+  ["2013", 1000, 400],
+  ["2014", 1170, 460],
+  ["2015", 660, 1120],
+  ["2016", 1030, 540],
+];
+
+export const options = {
+  backgroundColor: "transparent",
+  legendTextStyle: { color: "#FFF" },
+  titleTextStyle: { color: "#FFF" },
+  hAxis: {
+    color: "#FFF",
+  },
+};
+
 const Dashboard = () => {
   const ITEM_HEIGHT = 48;
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -108,6 +129,15 @@ const Dashboard = () => {
                   </Menu>
                 </div>
               </div>
+              <h3 className="text-white font-weight-bold">$3,787,681.00</h3>
+              <p className="text-white">$3,578.90 in last Month</p>
+              <Chart
+                chartType="AreaChart"
+                width="100%"
+                height="200px"
+                data={data}
+                options={options}
+              />
             </div>
           </div>
         </div>
