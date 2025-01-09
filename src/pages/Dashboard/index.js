@@ -7,27 +7,47 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import Button from "@mui/material/Button";
+import FormControl from "@mui/material/FormControl";
+
+import * as React from "react";
+import { useState } from "react";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 //google chart import
 import { Chart } from "react-google-charts";
 
-import React from "react";
 import DashboardBox from "./components/dashboardBox";
 
 export const data = [
-  ["Year", "Sales", "Expenses"],
-  ["2013", 1000, 400],
-  ["2014", 1170, 460],
-  ["2015", 660, 1120],
-  ["2016", 1030, 540],
+  ["Year", "Sales"],
+  ["2013", 1130],
+  ["2014", 1170],
+  ["2015", 1140],
+  ["2016", 1180],
 ];
 
 export const options = {
   backgroundColor: "transparent",
+  chartArea: { width: "100%", height: "90%" },
+  legend: { position: "none" },
   legendTextStyle: { color: "#FFF" },
   titleTextStyle: { color: "#FFF" },
   hAxis: {
-    color: "#FFF",
+    textStyle: { color: "#FFF" },
+    gridlines: { color: "transparent" },
+  },
+  vAxis: {
+    textStyle: { color: "#FFF" },
+    gridlines: { color: "transparent" },
+  },
+  colors: ["#2a6ff7"],
+  areaOpacity: 0.5,
+  lineWidth: 2,
+  pointSize: 0, // Hide data points
+  annotations: {
+    textStyle: {
+      fontSize: 0, // Hide annotations
+    },
   },
 };
 
@@ -44,9 +64,13 @@ const Dashboard = () => {
     setAnchorEl(null);
   };
 
+  const [showBy, setshowBy] = useState("");
+  const [CatBy, setCatBy] = useState("");
+  const [BrandBy, setbrandBy] = useState("");
+  const [SearchBy, setSearchBy] = useState("");
+
   return (
     <>
-      {/* <h4>Dashboard Page</h4> */}
       <div className="right-content w-100">
         <div className="row dashboardBoxWrapperRow">
           <div className="col-md-8">
@@ -134,15 +158,130 @@ const Dashboard = () => {
               <Chart
                 chartType="AreaChart"
                 width="100%"
-                height="200px"
+                height="200px" // Increased height
                 data={data}
                 options={options}
+                className="custom-chart"
               />
             </div>
+          </div>
+        </div>
+
+        {/* cart */}
+        <div className="card shadow border-0 p-3 mt-4">
+          <h3 className="hd">Best Selling Product</h3>
+
+          {/* filter */}
+          {/* show by */}
+          <div className="row cardFilters mt-3">
+            <div className=" col col-md-3">
+              <h4>SHOW BY</h4>
+              <FormControl className="w-100" size="small">
+                <Select
+                  value={showBy}
+                  onChange={(e) => setshowBy(e.target.value)}
+                  displayEmpty
+                  inputProps={{ "aria-label": "Without label" }}
+                  labelId="demo-select-small-label"
+                  className="w-100"
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+            {/* catergory by */}
+            <div className=" col col-md-3">
+              <h4>CATEGORY BY</h4>
+              <FormControl className="w-100" size="small">
+                <Select
+                  value={CatBy}
+                  onChange={(e) => setCatBy(e.target.value)}
+                  displayEmpty
+                  inputProps={{ "aria-label": "Without label" }}
+                  labelId="demo-select-small-label"
+                  className="w-100"
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+            {/* BRAND wise */}
+            <div className=" col col-md-3">
+              <h4>BRAND BY</h4>
+              <FormControl className="w-100" size="small">
+                <Select
+                  value={BrandBy}
+                  onChange={(e) => setbrandBy(e.target.value)}
+                  displayEmpty
+                  inputProps={{ "aria-label": "Without label" }}
+                  labelId="demo-select-small-label"
+                  className="w-100"
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+            {/* Search by */}
+            <div className=" col col-md-3">
+              <h4>SEARCH BY</h4>
+              <FormControl className="w-100" size="small">
+                <Select
+                  value={SearchBy}
+                  onChange={(e) => setSearchBy(e.target.value)}
+                  displayEmpty
+                  inputProps={{ "aria-label": "Without label" }}
+                  labelId="demo-select-small-label"
+                  className="w-100"
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+          </div>
+
+          {/* table */}
+          <div className="table-responsive mt-3">
+            <table className="table table-bordered">
+              <thead className="thead-dark ">
+                <tr>
+                  <th>UID</th>
+                  <th>Product</th>
+                  <th>CATEGORY</th>
+                  <th>BRAND</th>
+                  <th>PRICE</th>
+                  <th>STOCK</th>
+                  <th>RATING</th>
+                  <th>ORDER</th>
+                  <th>SALES</th>
+                  <th>ACTION</th>
+                </tr>
+              </thead>
+            </table>
           </div>
         </div>
       </div>
     </>
   );
 };
+
 export default Dashboard;

@@ -6,8 +6,6 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 
-
-
 const DashboardBox = (props) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -59,7 +57,7 @@ const DashboardBox = (props) => {
             <BsThreeDotsVertical />
           </Button>
           <Menu
-          className="dropDown_menu"
+            className="dropDown_menu"
             MenuListProps={{
               "aria-labelledby": "long-button",
             }}

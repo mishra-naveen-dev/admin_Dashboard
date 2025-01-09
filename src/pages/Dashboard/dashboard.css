@@ -108,7 +108,7 @@
   font-size: 20px !important;
   opacity: 1 !important;
 }
-.graphBox .toggleIcon svg{
+.graphBox .toggleIcon svg {
   rotate: 90deg;
 }
 
@@ -120,4 +120,31 @@
   font-size: 14px;
   color: #fff;
   opacity: 0.7;
+}
+
+.custom-chart {
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0);
+  height: 100%;
+}
+
+.card {
+  margin: 20px 0px;
+  border-radius: 10px;
+}
+.card .hd {
+  font-size: 18px;
+  font-weight: bold;
+  color: #403e57;
+}
+.cardFilters .col h4 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #403e57;
+}
+
+.table .thead-dark th {
+  background: #2a6ff7 !important;
 }
