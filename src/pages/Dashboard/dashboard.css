@@ -144,7 +144,55 @@
   text-transform: capitalize;
   color: #403e57;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #403e57;
+}
 .table .thead-dark th {
-  background: #2a6ff7 !important;
+  background-color: #1866ee !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  font-size: 14px !important;
+  border-radius: 1px !important;
+}
+
+.table tbody td {
+  font-size: 14px !important;
+  color: #403e57;
+  font-weight: 500;
+}
+
+.table tbody .actions button {
+  min-width: 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+  margin: 0px 3px !important;
+}
+.table tbody .actions button.secondary {
+  background: rgba(203, 60, 231, 0.2) !important;
+}
+.table tbody .actions button.success {
+  background: rgba(26, 159, 83, 0.2) !important;
+}
+.table tbody .actions button.error {
+  background: rgba(241, 17, 51, 0.2) !important;
+}
+.table tbody .actions button svg {
+  font-size: 32px !important;
+}
+
+table.v-align td {
+  vertical-align: middle !important;
+}
+.table td .old,
+.table td .new {
+  display: block;
+  width: 100%;
+}
+.table td del{
+  color:rgb(238, 82, 82);
+  opacity: 1;
 }

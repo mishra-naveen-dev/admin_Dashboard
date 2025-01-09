@@ -12,6 +12,9 @@ import FormControl from "@mui/material/FormControl";
 import * as React from "react";
 import { useState } from "react";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { FaEye } from "react-icons/fa";
+import { HiPencilAlt } from "react-icons/hi";
+import { MdDelete } from "react-icons/md";
 
 //google chart import
 import { Chart } from "react-google-charts";
@@ -261,7 +264,7 @@ const Dashboard = () => {
 
           {/* table */}
           <div className="table-responsive mt-3">
-            <table className="table table-bordered">
+            <table className="table table-bordered v-align">
               <thead className="thead-dark ">
                 <tr>
                   <th>UID</th>
@@ -276,6 +279,35 @@ const Dashboard = () => {
                   <th>ACTION</th>
                 </tr>
               </thead>
+              <tbody>
+                <tr>
+                  <td>#1</td>
+                  <td>Tops and skirt set for female</td>
+                  <td>womans</td>
+                  <td>richman</td>
+                  <td>
+                    <span className="new">$19.00</span>
+                    <del className="old text-danger">$21.00</del>
+                  </td>
+                  <td>30</td>
+                  <td>4.9(16)</td>
+                  <td>380</td>
+                  <td>$38k</td>
+                  <td>
+                    <div className="actions d-flex align-items-center">
+                      <Button className="secondary" color="secondary">
+                        <FaEye />
+                      </Button>
+                      <Button className="success" color="success">
+                        <HiPencilAlt />
+                      </Button>
+                      <Button className="error" color="error">
+                        <MdDelete />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
