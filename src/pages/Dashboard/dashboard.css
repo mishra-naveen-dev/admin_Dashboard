@@ -149,7 +149,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   color: #403e57;
 }
 .table .thead-dark th {
@@ -192,7 +193,35 @@ table.v-align td {
   display: block;
   width: 100%;
 }
-.table td del{
-  color:rgb(238, 82, 82);
-  opacity: 1;
+
+table td .imgWrapper {
+  width: 20%;
+  flex: 0 0 20%;
+}
+table td .imgWrapper img {
+}
+table td .info {
+  width: 65%;
+  flex: 0 0 65%;
+}
+
+table td .info h6 {
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+table td .info p {
+  font-size: 13px;
+  line-height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #5e5d72;
+  margin-bottom: 0px;
+}
+table.v-align td .productBox {
+  width: 280px;
 }

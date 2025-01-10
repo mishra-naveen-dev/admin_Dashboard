@@ -1,8 +1,9 @@
 import "./dashboard.css";
-import { FaUserCircle } from "react-icons/fa";
-import { HiOutlineShoppingCart } from "react-icons/hi";
+import { FaUserCircle, FaEye } from "react-icons/fa";
+import { HiOutlineShoppingCart, HiPencilAlt } from "react-icons/hi";
 import { IoBagCheck } from "react-icons/io5";
 import { GrStar } from "react-icons/gr";
+import { MdDelete } from "react-icons/md";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { BsThreeDotsVertical } from "react-icons/bs";
@@ -12,14 +13,23 @@ import FormControl from "@mui/material/FormControl";
 import * as React from "react";
 import { useState } from "react";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { FaEye } from "react-icons/fa";
-import { HiPencilAlt } from "react-icons/hi";
-import { MdDelete } from "react-icons/md";
 
 //google chart import
 import { Chart } from "react-google-charts";
 
 import DashboardBox from "./components/dashboardBox";
+// import img
+import img1 from "../../assets/image/skirtim1.webp";
+import img2 from "../../assets/image/shirtmg2.webp";
+import img3 from "../../assets/image/shoes.webp";
+import img4 from "../../assets/image/jacketwomen.webp";
+import img5 from "../../assets/image/menspent2.webp";
+import img6 from "../../assets/image/menssweater1.jpg";
+import img7 from "../../assets/image/pentsmens1.webp";
+import img8 from "../../assets/image/womenpent.webp";
+import img9 from "../../assets/image/womenpent2.webp";
+import img10 from "../../assets/image/watche1.jpg";
+import img11 from "../../assets/image/swearterwomen.webp";
 
 export const data = [
   ["Year", "Sales"],
@@ -33,8 +43,6 @@ export const options = {
   backgroundColor: "transparent",
   chartArea: { width: "100%", height: "90%" },
   legend: { position: "none" },
-  legendTextStyle: { color: "#FFF" },
-  titleTextStyle: { color: "#FFF" },
   hAxis: {
     textStyle: { color: "#FFF" },
     gridlines: { color: "transparent" },
@@ -43,8 +51,8 @@ export const options = {
     textStyle: { color: "#FFF" },
     gridlines: { color: "transparent" },
   },
-  colors: ["#2a6ff7"],
-  areaOpacity: 0.5,
+  colors: ["#0159f1"], // Transparent color
+  areaOpacity: 0.1, // Adjust opacity for transparency
   lineWidth: 2,
   pointSize: 0, // Hide data points
   annotations: {
@@ -268,7 +276,7 @@ const Dashboard = () => {
               <thead className="thead-dark ">
                 <tr>
                   <th>UID</th>
-                  <th>Product</th>
+                  <th style={{ width: "300px" }}>Product</th>
                   <th>CATEGORY</th>
                   <th>BRAND</th>
                   <th>PRICE</th>
@@ -280,14 +288,468 @@ const Dashboard = () => {
                 </tr>
               </thead>
               <tbody>
+                {/* 1 */}
                 <tr>
                   <td>#1</td>
-                  <td>Tops and skirt set for female</td>
+                  <td>
+                    <div className="d-flex align-item-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img src={img1} alt="" srcset="" className="w-100" />
+                        </div>
+                      </div>
+                      <div className="info pl-2">
+                        <h6>Tops and skirt set for Female...</h6>
+                        <p>
+                          Women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
                   <td>womans</td>
                   <td>richman</td>
                   <td>
-                    <span className="new">$19.00</span>
-                    <del className="old text-danger">$21.00</del>
+                    <div style={{ width: "50px" }}>
+                      <span className="new">$19.00</span>
+                      <del className="old text-danger">$21.00</del>
+                    </div>
+                  </td>
+                  <td>30</td>
+                  <td>4.9(16)</td>
+                  <td>380</td>
+                  <td>$38k</td>
+                  <td>
+                    <div className="actions d-flex align-items-center">
+                      <Button className="secondary" color="secondary">
+                        <FaEye />
+                      </Button>
+                      <Button className="success" color="success">
+                        <HiPencilAlt />
+                      </Button>
+                      <Button className="error" color="error">
+                        <MdDelete />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+                {/* 2 */}
+                <tr>
+                  <td>#2</td>
+                  <td>
+                    <div className="d-flex align-item-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img src={img2} alt="" srcset="" className="w-100" />
+                        </div>
+                      </div>
+                      <div className="info pl-2">
+                        <h6>Men's Casual Shirt...</h6>
+                        <p>Men's exclusive casual shirt for summer</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Men's</td>
+                  <td>FashionHub</td>
+                  <td>
+                    <div style={{ width: "50px" }}>
+                      <span className="new">$25.00</span>
+                      <del className="old text-danger">$30.00</del>
+                    </div>
+                  </td>
+                  <td>50</td>
+                  <td>4.8(20)</td>
+                  <td>420</td>
+                  <td>$42k</td>
+                  <td>
+                    <div className="actions d-flex align-items-center">
+                      <Button className="secondary" color="secondary">
+                        <FaEye />
+                      </Button>
+                      <Button className="success" color="success">
+                        <HiPencilAlt />
+                      </Button>
+                      <Button className="error" color="error">
+                        <MdDelete />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#3</td>
+                  <td>
+                    <div className="d-flex align-item-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img src={img3} alt="" srcset="" className="w-100" />
+                        </div>
+                      </div>
+                      <div className="info pl-2">
+                        <h6>Styling Shoes...</h6>
+                        <p>Comfortable running shoes for all seasons</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Unisex</td>
+                  <td>ShoeMart</td>
+                  <td>
+                    <div style={{ width: "50px" }}>
+                      <span className="new">$45.00</span>
+                      <del className="old text-danger">$50.00</del>
+                    </div>
+                  </td>
+                  <td>100</td>
+                  <td>4.7(30)</td>
+                  <td>500</td>
+                  <td>$50k</td>
+                  <td>
+                    <div className="actions d-flex align-items-center">
+                      <Button className="secondary" color="secondary">
+                        <FaEye />
+                      </Button>
+                      <Button className="success" color="success">
+                        <HiPencilAlt />
+                      </Button>
+                      <Button className="error" color="error">
+                        <MdDelete />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#4</td>
+                  <td>
+                    <div className="d-flex align-item-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img src={img4} alt="" srcset="" className="w-100" />
+                        </div>
+                      </div>
+                      <div className="info pl-2">
+                        <h6>Sweaters For Female...</h6>
+                        <p>
+                          Women's exclusive winter seasons and jersey set for
+                          Female
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>womans</td>
+                  <td>richman</td>
+                  <td>
+                    <div style={{ width: "50px" }}>
+                      <span className="new">$19.00</span>
+                      <del className="old text-danger">$21.00</del>
+                    </div>
+                  </td>
+                  <td>30</td>
+                  <td>4.9(16)</td>
+                  <td>380</td>
+                  <td>$38k</td>
+                  <td>
+                    <div className="actions d-flex align-items-center">
+                      <Button className="secondary" color="secondary">
+                        <FaEye />
+                      </Button>
+                      <Button className="success" color="success">
+                        <HiPencilAlt />
+                      </Button>
+                      <Button className="error" color="error">
+                        <MdDelete />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#5</td>
+                  <td>
+                    <div className="d-flex align-item-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img src={img5} alt="" srcset="" className="w-100" />
+                        </div>
+                      </div>
+                      <div className="info pl-2">
+                        <h6>Formal Pent For Male...</h6>
+                        <p>
+                          Women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Men</td>
+                  <td>richman</td>
+                  <td>
+                    <div style={{ width: "50px" }}>
+                      <span className="new">$19.00</span>
+                      <del className="old text-danger">$21.00</del>
+                    </div>
+                  </td>
+                  <td>30</td>
+                  <td>4.9(16)</td>
+                  <td>380</td>
+                  <td>$38k</td>
+                  <td>
+                    <div className="actions d-flex align-items-center">
+                      <Button className="secondary" color="secondary">
+                        <FaEye />
+                      </Button>
+                      <Button className="success" color="success">
+                        <HiPencilAlt />
+                      </Button>
+                      <Button className="error" color="error">
+                        <MdDelete />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#6</td>
+                  <td>
+                    <div className="d-flex align-item-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img src={img6} alt="" srcset="" className="w-100" />
+                        </div>
+                      </div>
+                      <div className="info pl-2">
+                        <h6>Sweater for male...</h6>
+                        <p>
+                          Women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>men</td>
+                  <td>richman</td>
+                  <td>
+                    <div style={{ width: "50px" }}>
+                      <span className="new">$19.00</span>
+                      <del className="old text-danger">$21.00</del>
+                    </div>
+                  </td>
+                  <td>30</td>
+                  <td>4.9(16)</td>
+                  <td>380</td>
+                  <td>$38k</td>
+                  <td>
+                    <div className="actions d-flex align-items-center">
+                      <Button className="secondary" color="secondary">
+                        <FaEye />
+                      </Button>
+                      <Button className="success" color="success">
+                        <HiPencilAlt />
+                      </Button>
+                      <Button className="error" color="error">
+                        <MdDelete />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#7</td>
+                  <td>
+                    <div className="d-flex align-item-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img src={img7} alt="" srcset="" className="w-100" />
+                        </div>
+                      </div>
+                      <div className="info pl-2">
+                        <h6>Styling Pent...</h6>
+                        <p>
+                          Women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>men</td>
+                  <td>richman</td>
+                  <td>
+                    <div style={{ width: "50px" }}>
+                      <span className="new">$19.00</span>
+                      <del className="old text-danger">$21.00</del>
+                    </div>
+                  </td>
+                  <td>30</td>
+                  <td>4.9(16)</td>
+                  <td>380</td>
+                  <td>$38k</td>
+                  <td>
+                    <div className="actions d-flex align-items-center">
+                      <Button className="secondary" color="secondary">
+                        <FaEye />
+                      </Button>
+                      <Button className="success" color="success">
+                        <HiPencilAlt />
+                      </Button>
+                      <Button className="error" color="error">
+                        <MdDelete />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#8</td>
+                  <td>
+                    <div className="d-flex align-item-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img src={img8} alt="" srcset="" className="w-100" />
+                        </div>
+                      </div>
+                      <div className="info pl-2">
+                        <h6>Women Pent Female...</h6>
+                        <p>
+                          Women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>womans</td>
+                  <td>richman</td>
+                  <td>
+                    <div style={{ width: "50px" }}>
+                      <span className="new">$19.00</span>
+                      <del className="old text-danger">$21.00</del>
+                    </div>
+                  </td>
+                  <td>30</td>
+                  <td>4.9(16)</td>
+                  <td>380</td>
+                  <td>$38k</td>
+                  <td>
+                    <div className="actions d-flex align-items-center">
+                      <Button className="secondary" color="secondary">
+                        <FaEye />
+                      </Button>
+                      <Button className="success" color="success">
+                        <HiPencilAlt />
+                      </Button>
+                      <Button className="error" color="error">
+                        <MdDelete />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#9</td>
+                  <td>
+                    <div className="d-flex align-item-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img src={img9} alt="" srcset="" className="w-100" />
+                        </div>
+                      </div>
+                      <div className="info pl-2">
+                        <h6>Touser for Female...</h6>
+                        <p>
+                          Women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Both </td>
+                  <td>richman</td>
+                  <td>
+                    <div style={{ width: "50px" }}>
+                      <span className="new">$19.00</span>
+                      <del className="old text-danger">$21.00</del>
+                    </div>
+                  </td>
+                  <td>30</td>
+                  <td>4.9(16)</td>
+                  <td>380</td>
+                  <td>$38k</td>
+                  <td>
+                    <div className="actions d-flex align-items-center">
+                      <Button className="secondary" color="secondary">
+                        <FaEye />
+                      </Button>
+                      <Button className="success" color="success">
+                        <HiPencilAlt />
+                      </Button>
+                      <Button className="error" color="error">
+                        <MdDelete />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#10</td>
+                  <td>
+                    <div className="d-flex align-item-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img src={img10} alt="" srcset="" className="w-100" />
+                        </div>
+                      </div>
+                      <div className="info pl-2">
+                        <h6>Watches ...</h6>
+                        <p>
+                          Women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>All</td>
+                  <td>richman</td>
+                  <td>
+                    <div style={{ width: "50px" }}>
+                      <span className="new">$19.00</span>
+                      <del className="old text-danger">$21.00</del>
+                    </div>
+                  </td>
+                  <td>30</td>
+                  <td>4.9(16)</td>
+                  <td>380</td>
+                  <td>$38k</td>
+                  <td>
+                    <div className="actions d-flex align-items-center">
+                      <Button className="secondary" color="secondary">
+                        <FaEye />
+                      </Button>
+                      <Button className="success" color="success">
+                        <HiPencilAlt />
+                      </Button>
+                      <Button className="error" color="error">
+                        <MdDelete />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>#11</td>
+                  <td>
+                    <div className="d-flex align-item-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img src={img11} alt="" srcset="" className="w-100" />
+                        </div>
+                      </div>
+                      <div className="info pl-2">
+                        <h6>Sweater for Female...</h6>
+                        <p>
+                          Women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>womans</td>
+                  <td>richman</td>
+                  <td>
+                    <div style={{ width: "50px" }}>
+                      <span className="new">$19.00</span>
+                      <del className="old text-danger">$21.00</del>
+                    </div>
                   </td>
                   <td>30</td>
                   <td>4.9(16)</td>
