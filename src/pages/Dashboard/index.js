@@ -9,7 +9,8 @@ import MenuItem from "@mui/material/MenuItem";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
-
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 import * as React from "react";
 import { useState } from "react";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
@@ -37,11 +38,17 @@ export const data = [
   ["2014", 1170],
   ["2015", 1140],
   ["2016", 1180],
+  ["2017", 1170],
+  ["2018", 1140],
+  ["2019", 1180],
+  ["2020", 1170],
+  ["2021", 1140],
+  ["2022", 1180],
 ];
 
 export const options = {
   backgroundColor: "transparent",
-  chartArea: { width: "100%", height: "90%" },
+  chartArea: { width: "100%", height: "90%", marginBottom: "0px" },
   legend: { position: "none" },
   hAxis: {
     textStyle: { color: "#FFF" },
@@ -51,13 +58,13 @@ export const options = {
     textStyle: { color: "#FFF" },
     gridlines: { color: "transparent" },
   },
-  colors: ["#0159f1"], // Transparent color
-  areaOpacity: 0.1, // Adjust opacity for transparency
+  colors: ["#0159f5"], // Transparent color
+  areaOpacity: 2, // Adjust opacity for transparency
   lineWidth: 2,
   pointSize: 0, // Hide data points
   annotations: {
     textStyle: {
-      fontSize: 0, // Hide annotations
+      fontSize: 3, // Hide annotations
     },
   },
 };
@@ -771,6 +778,15 @@ const Dashboard = () => {
                 </tr>
               </tbody>
             </table>
+            <div className="d-flex   tableFooter">
+              <Pagination
+                count={10}
+                color="primary"
+                className="pagination"
+                showFirstButton
+                showLastButton
+              />
+            </div>
           </div>
         </div>
       </div>

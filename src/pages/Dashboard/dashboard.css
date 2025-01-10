@@ -199,6 +199,7 @@ table td .imgWrapper {
   flex: 0 0 20%;
 }
 table td .imgWrapper img {
+  border-radius: 5px;
 }
 table td .info {
   width: 65%;
@@ -211,6 +212,9 @@ table td .info h6 {
   font-size: 14px;
   text-overflow: ellipsis;
   font-weight: 600;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top: 7px;
   margin-bottom: 0px;
 }
 table td .info p {
@@ -224,4 +228,11 @@ table td .info p {
 }
 table.v-align td .productBox {
   width: 280px;
+}
+
+.tableFooter {
+  padding-bottom: 20px;
+}
+.tableFooter .pagination {
+  margin-left: auto;
 }
