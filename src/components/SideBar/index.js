@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -22,6 +22,7 @@ import { IoPieChartSharp } from "react-icons/io5";
 import { FaLanguage } from "react-icons/fa6";
 import { MdOutlineInfo } from "react-icons/md";
 import { FaUnlockKeyhole } from "react-icons/fa6";
+import { MyContext } from "../../App";
 
 const SideBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -37,6 +38,8 @@ const SideBar = () => {
 
   const [activeTab, setActiveTab] = useState(0);
   const [isToggleSubmenu, setIsToggleSubmenu] = useState(0);
+
+  const context = useContext(MyContext);
 
   const isOpenSubmenu = (index) => {
     setActiveTab(index);

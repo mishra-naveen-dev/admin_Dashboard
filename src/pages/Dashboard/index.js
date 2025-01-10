@@ -1,25 +1,26 @@
-import "./dashboard.css";
-import { FaUserCircle, FaEye } from "react-icons/fa";
+import React, { useState, useEffect, useContext } from "react";
+import { Chart } from "react-google-charts";
+import { Button } from "@mui/material";
+import { BsThreeDotsVertical } from "react-icons/bs";
+import { FaUserCircle } from "react-icons/fa";
 import { HiOutlineShoppingCart, HiPencilAlt } from "react-icons/hi";
 import { IoBagCheck } from "react-icons/io5";
 import { GrStar } from "react-icons/gr";
-import { MdDelete } from "react-icons/md";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { BsThreeDotsVertical } from "react-icons/bs";
-import Button from "@mui/material/Button";
+import DashboardBox from "./components/dashboardBox";
+import { data, options } from "./chartData"; // Assuming chartData.js contains the data and options
+import { MyContext } from "../../App";
+import "./dashboard.css";
+import { FaEye } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 import FormControl from "@mui/material/FormControl";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
-import * as React from "react";
-import { useState } from "react";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
-//google chart import
-import { Chart } from "react-google-charts";
 
-import DashboardBox from "./components/dashboardBox";
-// import img
+//img
 import img1 from "../../assets/image/skirtim1.webp";
 import img2 from "../../assets/image/shirtmg2.webp";
 import img3 from "../../assets/image/shoes.webp";
@@ -32,47 +33,11 @@ import img9 from "../../assets/image/womenpent2.webp";
 import img10 from "../../assets/image/watche1.jpg";
 import img11 from "../../assets/image/swearterwomen.webp";
 
-export const data = [
-  ["Year", "Sales"],
-  ["2013", 1130],
-  ["2014", 1170],
-  ["2015", 1140],
-  ["2016", 1180],
-  ["2017", 1170],
-  ["2018", 1140],
-  ["2019", 1180],
-  ["2020", 1170],
-  ["2021", 1140],
-  ["2022", 1180],
-];
-
-export const options = {
-  backgroundColor: "transparent",
-  chartArea: { width: "100%", height: "90%", marginBottom: "0px" },
-  legend: { position: "none" },
-  hAxis: {
-    textStyle: { color: "#FFF" },
-    gridlines: { color: "transparent" },
-  },
-  vAxis: {
-    textStyle: { color: "#FFF" },
-    gridlines: { color: "transparent" },
-  },
-  colors: ["#0159f5"], // Transparent color
-  areaOpacity: 2, // Adjust opacity for transparency
-  lineWidth: 2,
-  pointSize: 0, // Hide data points
-  annotations: {
-    textStyle: {
-      fontSize: 3, // Hide annotations
-    },
-  },
-};
-
 const Dashboard = () => {
   const ITEM_HEIGHT = 48;
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+  const context = useContext(MyContext);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -86,6 +51,19 @@ const Dashboard = () => {
   const [CatBy, setCatBy] = useState("");
   const [BrandBy, setbrandBy] = useState("");
   const [SearchBy, setSearchBy] = useState("");
+
+  useEffect(() => {
+    const handleResize = () => {
+      window.dispatchEvent(new Event("resize"));
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [context.isToggleSidebar]);
 
   return (
     <>
@@ -123,7 +101,7 @@ const Dashboard = () => {
           </div>
 
           <div className="col-md-4 pl-0">
-            <div className="box graphBox">
+            <div className="box graphBox ">
               <div className="d-flex align-items-center w-100 bottomEle">
                 <h4 className="text-white mb-0 mt-0">Total Sales</h4>
                 <div className="ml-auto">
@@ -173,13 +151,14 @@ const Dashboard = () => {
               </div>
               <h3 className="text-white font-weight-bold">$3,787,681.00</h3>
               <p className="text-white">$3,578.90 in last Month</p>
+
               <Chart
                 chartType="AreaChart"
                 width="100%"
-                height="200px" // Increased height
+                height="200px"
                 data={data}
                 options={options}
-                className="custom-chart"
+                className="custom-chart "
               />
             </div>
           </div>
@@ -779,6 +758,9 @@ const Dashboard = () => {
               </tbody>
             </table>
             <div className="d-flex   tableFooter">
+              <p>
+                showing<b> 12</b> of <b>60</b> reults
+              </p>
               <Pagination
                 count={10}
                 color="primary"

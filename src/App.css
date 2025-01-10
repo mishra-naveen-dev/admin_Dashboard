@@ -44,6 +44,9 @@ header {
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
 }
+header .part3 {
+  padding-left: 100px;
+}
 
 header .logo {
   text-decoration: none !important;
@@ -70,7 +73,7 @@ header button.rounded-circle {
 
 header button.rounded-circle svg {
   color: #292929;
-  font-size: 20px !important;
+  font-size: 24px !important;
   transition: all 0.2s ease;
 }
 header button.rounded-circle svg:hover {
@@ -237,6 +240,11 @@ header .part2 {
   flex: 0 0 20%;
   transition: all 0.3s ease-in-out;
 }
+.main .sidebarWrapper.toggle {
+  width: 0%;
+  flex: 0 0 0%;
+}
+
 .main .sidebarWrapper .sidebar {
   width: 20%;
   height: 100vh;
@@ -248,6 +256,11 @@ header .part2 {
   overflow-y: auto !important; /* Ensure vertical scrolling is enabled */
   overflow-x: hidden !important;
   padding-bottom: 55px !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.main .sidebarWrapper.toggle .sidebar {
+  left: -100%;
 }
 
 .main .sidebarWrapper .sidebar ::-webkit-scrollbar {
@@ -266,4 +279,9 @@ header .part2 {
 .main .contentWrapper {
   width: 80%;
   flex: 0 0 80%;
+  transition: all 0.3s ease-in-out;
+}
+.main .contentWrapper.toggle {
+  width: 100%;
+  flex: 0 0 100%;
 }

@@ -1,5 +1,6 @@
 .right-content {
   padding: 90px 30px;
+  padding-bottom: 10px;
 }
 .dashboardBoxWrapper {
   gap: 20px;
@@ -92,7 +93,15 @@
 .graphBox {
   background-image: linear-gradient(#1a50b5, #2a6ff7);
   border-radius: 10px;
-  padding: 25px;
+  padding: 20px; /* Increased padding */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* Increased margin */
 }
 .toggleIcon {
   font-size: 22px;
@@ -123,10 +132,9 @@
 }
 
 .custom-chart {
-  padding: 10px;
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0);
-  height: 100%;
+  flex-grow: 1;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .card {
@@ -152,6 +160,9 @@ h5,
 h6,
 p {
   color: #403e57;
+}
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #ccc !important;
 }
 .table .thead-dark th {
   background-color: #1866ee !important;
@@ -235,4 +246,9 @@ table.v-align td .productBox {
 }
 .tableFooter .pagination {
   margin-left: auto;
+}
+.tableFooter p {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 0px;
 }
