@@ -39,6 +39,7 @@ const Login = () => {
     <>
       <img src={pattern} alt="" className="loginPattern" />
       <section className="loginSection">
+      
         <div className="loginBox">
           <div className="logo text-center">
             <img src={Logo} width="80px" alt="" />

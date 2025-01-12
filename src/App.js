@@ -10,6 +10,7 @@ const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Header = lazy(() => import("./components/Header"));
 const Sidebar = lazy(() => import("./components/SideBar"));
 const Login = lazy(() => import("./pages/Login"));
+const SignUp = lazy(() => import("./pages/SignUp"));
 
 const MyContext = createContext();
 
@@ -47,14 +48,15 @@ function App() {
             )}
 
             <div
-              className={`contentWrapper ${isHideSidebarAndHeader===true && 'full'}  ${
-                isToggleSidebar === true ? "toggle" : ""
-              }`}
+              className={`contentWrapper ${
+                isHideSidebarAndHeader === true && "full"
+              }  ${isToggleSidebar === true ? "toggle" : ""}`}
             >
               <Routes>
                 <Route path="/" exact={true} element={<Dashboard />} />
                 <Route path="/dashboard" exact={true} element={<Dashboard />} />
                 <Route path="/login" exact={true} element={<Login />} />
+                <Route path="/signUp" exact={true} element={<SignUp />} />
               </Routes>
             </div>
           </div>
