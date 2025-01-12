@@ -15,11 +15,11 @@ body {
 }
 
 .btn-blue {
-  background: #0858f7e6 !important;
+  background: #0858f7 !important;
   font-size: 14px !important;
-  font-weight: 600;
-  color: #000 !important;
-  border-radius: 10px !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  border-radius: 5px !important;
   text-transform: capitalize !important;
 }
 .btn-blue:hover {
@@ -44,8 +44,8 @@ header {
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
 }
-header .part3 {
-  padding-left: 100px;
+header .part2 {
+  padding-left: 50px;
 }
 
 header .logo {
@@ -79,13 +79,13 @@ header button.rounded-circle svg {
 header button.rounded-circle svg:hover {
   color: #0156ff !important;
 }
-header .part2 {
+/* header .part2 {
   padding-left: 8rem !important;
-}
+} */
 .searchBox {
   /* gap: 10px !important; */
-  width: 600px !important;
-  height: 42px;
+  width: 900px !important;
+  height: 43px;
   background: #f0f5ff;
   border-radius: 6px;
   padding: 3px 15px !important;

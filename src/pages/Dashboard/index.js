@@ -2,23 +2,26 @@ import React, { useState, useEffect, useContext } from "react";
 import { Chart } from "react-google-charts";
 import { Button } from "@mui/material";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { FaUserCircle } from "react-icons/fa";
+import {
+  FaUserCircle,
+  FaStar,
+  FaStarHalfAlt,
+  FaRegStar,
+  FaEye,
+} from "react-icons/fa";
 import { HiOutlineShoppingCart, HiPencilAlt } from "react-icons/hi";
 import { IoBagCheck } from "react-icons/io5";
 import { GrStar } from "react-icons/gr";
+import { MdDelete } from "react-icons/md";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import DashboardBox from "./components/dashboardBox";
 import { data, options } from "./chartData"; // Assuming chartData.js contains the data and options
 import { MyContext } from "../../App";
 import "./dashboard.css";
-import { FaEye } from "react-icons/fa";
-import { MdDelete } from "react-icons/md";
 import FormControl from "@mui/material/FormControl";
 import Pagination from "@mui/material/Pagination";
-import Stack from "@mui/material/Stack";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-
+import Select from "@mui/material/Select";
 
 //img
 import img1 from "../../assets/image/skirtim1.webp";
@@ -65,6 +68,192 @@ const Dashboard = () => {
     };
   }, [context.isToggleSidebar]);
 
+  const generateStars = (rating) => {
+    const fullStars = Math.floor(rating);
+    const halfStar = rating % 1 !== 0;
+    const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+    return (
+      <>
+        {[...Array(fullStars)].map((_, index) => (
+          <FaStar key={index} color="#ffc107" />
+        ))}
+        {halfStar && <FaStarHalfAlt color="#ffc107" />}
+        {[...Array(emptyStars)].map((_, index) => (
+          <FaRegStar key={index} color="#ffc107" />
+        ))}
+      </>
+    );
+  };
+
+  const products = [
+    {
+      id: 1,
+      img: img1,
+      name: "Tops and skirt set for Female",
+      category: "womans",
+      brand: "richman",
+      price: "$19.00",
+      oldPrice: "$21.00",
+      stock: 30,
+      rating: 4.9,
+      reviews: 16,
+      orders: 380,
+      sales: "$38k",
+      description: "Women's exclusive summer tops and skirt set.",
+    },
+    {
+      id: 2,
+      img: img2,
+      name: "Men's Casual Shirt",
+      category: "Men's",
+      brand: "FashionHub",
+      price: "$25.00",
+      oldPrice: "$30.00",
+      stock: 50,
+      rating: 4.8,
+      reviews: 20,
+      orders: 420,
+      sales: "$42k",
+      description: "Men's exclusive casual shirt for summer.",
+    },
+    {
+      id: 3,
+      img: img3,
+      name: "Running Shoes",
+      category: "Footwear",
+      brand: "ShoeMart",
+      price: "$45.00",
+      oldPrice: "$50.00",
+      stock: 100,
+      rating: 4.7,
+      reviews: 30,
+      orders: 500,
+      sales: "$50k",
+      description: "Comfortable running shoes for all seasons.",
+    },
+    {
+      id: 4,
+      img: img4,
+      name: "Women's Jacket",
+      category: "Clothing",
+      brand: "richman",
+      price: "$90.00",
+      oldPrice: "$100.00",
+      stock: 20,
+      rating: 4.6,
+      reviews: 25,
+      orders: 300,
+      sales: "$27k",
+      description: "Stylish and warm jacket for women.",
+    },
+    {
+      id: 5,
+      img: img5,
+      name: "Men's Pants",
+      category: "Clothing",
+      brand: "richman",
+      price: "$60.00",
+      oldPrice: "$70.00",
+      stock: 40,
+      rating: 4.5,
+      reviews: 18,
+      orders: 350,
+      sales: "$21k",
+      description: "Comfortable and stylish men's pants.",
+    },
+    {
+      id: 6,
+      img: img6,
+      name: "Men's Sweater",
+      category: "Clothing",
+      brand: "richman",
+      price: "$80.00",
+      oldPrice: "$90.00",
+      stock: 25,
+      rating: 4.4,
+      reviews: 22,
+      orders: 280,
+      sales: "$22k",
+      description: "Warm and cozy sweater for men.",
+    },
+    {
+      id: 7,
+      img: img7,
+      name: "Men's Formal Pants",
+      category: "Clothing",
+      brand: "richman",
+      price: "$70.00",
+      oldPrice: "$80.00",
+      stock: 35,
+      rating: 4.3,
+      reviews: 15,
+      orders: 320,
+      sales: "$24k",
+      description: "Elegant and comfortable formal pants for men.",
+    },
+    {
+      id: 8,
+      img: img8,
+      name: "Women's Pants",
+      category: "Clothing",
+      brand: "richman",
+      price: "$55.00",
+      oldPrice: "$65.00",
+      stock: 45,
+      rating: 4.2,
+      reviews: 20,
+      orders: 400,
+      sales: "$28k",
+      description: "Stylish and comfortable pants for women.",
+    },
+    {
+      id: 9,
+      img: img9,
+      name: "Women's Formal Pants",
+      category: "Clothing",
+      brand: "richman",
+      price: "$65.00",
+      oldPrice: "$75.00",
+      stock: 30,
+      rating: 4.1,
+      reviews: 18,
+      orders: 360,
+      sales: "$26k",
+      description: "Elegant and stylish formal pants for women.",
+    },
+    {
+      id: 10,
+      img: img10,
+      name: "Men's Watch",
+      category: "Accessories",
+      brand: "richman",
+      price: "$150.00",
+      oldPrice: "$200.00",
+      stock: 15,
+      rating: 4.9,
+      reviews: 25,
+      orders: 200,
+      sales: "$30k",
+      description: "Luxury watch for men with elegant design.",
+    },
+    {
+      id: 11,
+      img: img11,
+      name: "Women's Sweater",
+      category: "Clothing",
+      brand: "richman",
+      price: "$85.00",
+      oldPrice: "$95.00",
+      stock: 20,
+      rating: 4.8,
+      reviews: 22,
+      orders: 250,
+      sales: "$23k",
+      description: "Warm and stylish sweater for women.",
+    },
+  ];
+
   return (
     <>
       <div className="right-content w-100">
@@ -101,7 +290,7 @@ const Dashboard = () => {
           </div>
 
           <div className="col-md-4 pl-0">
-            <div className="box graphBox ">
+            <div className="box graphBox">
               <div className="d-flex align-items-center w-100 bottomEle">
                 <h4 className="text-white mb-0 mt-0">Total Sales</h4>
                 <div className="ml-auto">
@@ -151,14 +340,13 @@ const Dashboard = () => {
               </div>
               <h3 className="text-white font-weight-bold">$3,787,681.00</h3>
               <p className="text-white">$3,578.90 in last Month</p>
-
               <Chart
                 chartType="AreaChart"
                 width="100%"
                 height="200px"
                 data={data}
                 options={options}
-                className="custom-chart "
+                className="custom-chart"
               />
             </div>
           </div>
@@ -274,492 +462,61 @@ const Dashboard = () => {
                 </tr>
               </thead>
               <tbody>
-                {/* 1 */}
-                <tr>
-                  <td>#1</td>
-                  <td>
-                    <div className="d-flex align-item-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img src={img1} alt="" srcset="" className="w-100" />
+                {products.map((product) => (
+                  <tr key={product.id}>
+                    <td>#{product.id}</td>
+                    <td>
+                      <div className="d-flex align-item-center productBox">
+                        <div className="imgWrapper">
+                          <div className="img">
+                            <img src={product.img} alt="" className="w-100" />
+                          </div>
+                        </div>
+                        <div className="info pl-2">
+                          <h6>{product.name}</h6>
+                          <p>{product.description}</p>
                         </div>
                       </div>
-                      <div className="info pl-2">
-                        <h6>Tops and skirt set for Female...</h6>
-                        <p>
-                          Women's exclusive summer Tops and skirt set for Female
-                          Tops and skirt set
-                        </p>
+                    </td>
+                    <td>{product.category}</td>
+                    <td>{product.brand}</td>
+                    <td>
+                      <div style={{ width: "70px" }}>
+                        <span className="new">{product.price}</span>
+                        <del className="old text-danger">
+                          {product.oldPrice}
+                        </del>
                       </div>
-                    </div>
-                  </td>
-                  <td>womans</td>
-                  <td>richman</td>
-                  <td>
-                    <div style={{ width: "50px" }}>
-                      <span className="new">$19.00</span>
-                      <del className="old text-danger">$21.00</del>
-                    </div>
-                  </td>
-                  <td>30</td>
-                  <td>4.9(16)</td>
-                  <td>380</td>
-                  <td>$38k</td>
-                  <td>
-                    <div className="actions d-flex align-items-center">
-                      <Button className="secondary" color="secondary">
-                        <FaEye />
-                      </Button>
-                      <Button className="success" color="success">
-                        <HiPencilAlt />
-                      </Button>
-                      <Button className="error" color="error">
-                        <MdDelete />
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
-                {/* 2 */}
-                <tr>
-                  <td>#2</td>
-                  <td>
-                    <div className="d-flex align-item-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img src={img2} alt="" srcset="" className="w-100" />
-                        </div>
+                    </td>
+                    <td>{product.stock}</td>
+                    <td>
+                      <div className="d-flex align-items-center">
+                        {generateStars(product.rating)}
+                        <span className="ml-2">({product.reviews})</span>
                       </div>
-                      <div className="info pl-2">
-                        <h6>Men's Casual Shirt...</h6>
-                        <p>Men's exclusive casual shirt for summer</p>
+                    </td>
+                    <td>{product.orders}</td>
+                    <td>{product.sales}</td>
+                    <td>
+                      <div className="actions d-flex align-items-center">
+                        <Button className="secondary" color="secondary">
+                          <FaEye />
+                        </Button>
+                        <Button className="success" color="success">
+                          <HiPencilAlt />
+                        </Button>
+                        <Button className="error" color="error">
+                          <MdDelete />
+                        </Button>
                       </div>
-                    </div>
-                  </td>
-                  <td>Men's</td>
-                  <td>FashionHub</td>
-                  <td>
-                    <div style={{ width: "50px" }}>
-                      <span className="new">$25.00</span>
-                      <del className="old text-danger">$30.00</del>
-                    </div>
-                  </td>
-                  <td>50</td>
-                  <td>4.8(20)</td>
-                  <td>420</td>
-                  <td>$42k</td>
-                  <td>
-                    <div className="actions d-flex align-items-center">
-                      <Button className="secondary" color="secondary">
-                        <FaEye />
-                      </Button>
-                      <Button className="success" color="success">
-                        <HiPencilAlt />
-                      </Button>
-                      <Button className="error" color="error">
-                        <MdDelete />
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#3</td>
-                  <td>
-                    <div className="d-flex align-item-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img src={img3} alt="" srcset="" className="w-100" />
-                        </div>
-                      </div>
-                      <div className="info pl-2">
-                        <h6>Styling Shoes...</h6>
-                        <p>Comfortable running shoes for all seasons</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>Unisex</td>
-                  <td>ShoeMart</td>
-                  <td>
-                    <div style={{ width: "50px" }}>
-                      <span className="new">$45.00</span>
-                      <del className="old text-danger">$50.00</del>
-                    </div>
-                  </td>
-                  <td>100</td>
-                  <td>4.7(30)</td>
-                  <td>500</td>
-                  <td>$50k</td>
-                  <td>
-                    <div className="actions d-flex align-items-center">
-                      <Button className="secondary" color="secondary">
-                        <FaEye />
-                      </Button>
-                      <Button className="success" color="success">
-                        <HiPencilAlt />
-                      </Button>
-                      <Button className="error" color="error">
-                        <MdDelete />
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#4</td>
-                  <td>
-                    <div className="d-flex align-item-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img src={img4} alt="" srcset="" className="w-100" />
-                        </div>
-                      </div>
-                      <div className="info pl-2">
-                        <h6>Sweaters For Female...</h6>
-                        <p>
-                          Women's exclusive winter seasons and jersey set for
-                          Female
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>womans</td>
-                  <td>richman</td>
-                  <td>
-                    <div style={{ width: "50px" }}>
-                      <span className="new">$19.00</span>
-                      <del className="old text-danger">$21.00</del>
-                    </div>
-                  </td>
-                  <td>30</td>
-                  <td>4.9(16)</td>
-                  <td>380</td>
-                  <td>$38k</td>
-                  <td>
-                    <div className="actions d-flex align-items-center">
-                      <Button className="secondary" color="secondary">
-                        <FaEye />
-                      </Button>
-                      <Button className="success" color="success">
-                        <HiPencilAlt />
-                      </Button>
-                      <Button className="error" color="error">
-                        <MdDelete />
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#5</td>
-                  <td>
-                    <div className="d-flex align-item-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img src={img5} alt="" srcset="" className="w-100" />
-                        </div>
-                      </div>
-                      <div className="info pl-2">
-                        <h6>Formal Pent For Male...</h6>
-                        <p>
-                          Women's exclusive summer Tops and skirt set for Female
-                          Tops and skirt set
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>Men</td>
-                  <td>richman</td>
-                  <td>
-                    <div style={{ width: "50px" }}>
-                      <span className="new">$19.00</span>
-                      <del className="old text-danger">$21.00</del>
-                    </div>
-                  </td>
-                  <td>30</td>
-                  <td>4.9(16)</td>
-                  <td>380</td>
-                  <td>$38k</td>
-                  <td>
-                    <div className="actions d-flex align-items-center">
-                      <Button className="secondary" color="secondary">
-                        <FaEye />
-                      </Button>
-                      <Button className="success" color="success">
-                        <HiPencilAlt />
-                      </Button>
-                      <Button className="error" color="error">
-                        <MdDelete />
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#6</td>
-                  <td>
-                    <div className="d-flex align-item-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img src={img6} alt="" srcset="" className="w-100" />
-                        </div>
-                      </div>
-                      <div className="info pl-2">
-                        <h6>Sweater for male...</h6>
-                        <p>
-                          Women's exclusive summer Tops and skirt set for Female
-                          Tops and skirt set
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>men</td>
-                  <td>richman</td>
-                  <td>
-                    <div style={{ width: "50px" }}>
-                      <span className="new">$19.00</span>
-                      <del className="old text-danger">$21.00</del>
-                    </div>
-                  </td>
-                  <td>30</td>
-                  <td>4.9(16)</td>
-                  <td>380</td>
-                  <td>$38k</td>
-                  <td>
-                    <div className="actions d-flex align-items-center">
-                      <Button className="secondary" color="secondary">
-                        <FaEye />
-                      </Button>
-                      <Button className="success" color="success">
-                        <HiPencilAlt />
-                      </Button>
-                      <Button className="error" color="error">
-                        <MdDelete />
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#7</td>
-                  <td>
-                    <div className="d-flex align-item-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img src={img7} alt="" srcset="" className="w-100" />
-                        </div>
-                      </div>
-                      <div className="info pl-2">
-                        <h6>Styling Pent...</h6>
-                        <p>
-                          Women's exclusive summer Tops and skirt set for Female
-                          Tops and skirt set
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>men</td>
-                  <td>richman</td>
-                  <td>
-                    <div style={{ width: "50px" }}>
-                      <span className="new">$19.00</span>
-                      <del className="old text-danger">$21.00</del>
-                    </div>
-                  </td>
-                  <td>30</td>
-                  <td>4.9(16)</td>
-                  <td>380</td>
-                  <td>$38k</td>
-                  <td>
-                    <div className="actions d-flex align-items-center">
-                      <Button className="secondary" color="secondary">
-                        <FaEye />
-                      </Button>
-                      <Button className="success" color="success">
-                        <HiPencilAlt />
-                      </Button>
-                      <Button className="error" color="error">
-                        <MdDelete />
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#8</td>
-                  <td>
-                    <div className="d-flex align-item-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img src={img8} alt="" srcset="" className="w-100" />
-                        </div>
-                      </div>
-                      <div className="info pl-2">
-                        <h6>Women Pent Female...</h6>
-                        <p>
-                          Women's exclusive summer Tops and skirt set for Female
-                          Tops and skirt set
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>womans</td>
-                  <td>richman</td>
-                  <td>
-                    <div style={{ width: "50px" }}>
-                      <span className="new">$19.00</span>
-                      <del className="old text-danger">$21.00</del>
-                    </div>
-                  </td>
-                  <td>30</td>
-                  <td>4.9(16)</td>
-                  <td>380</td>
-                  <td>$38k</td>
-                  <td>
-                    <div className="actions d-flex align-items-center">
-                      <Button className="secondary" color="secondary">
-                        <FaEye />
-                      </Button>
-                      <Button className="success" color="success">
-                        <HiPencilAlt />
-                      </Button>
-                      <Button className="error" color="error">
-                        <MdDelete />
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#9</td>
-                  <td>
-                    <div className="d-flex align-item-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img src={img9} alt="" srcset="" className="w-100" />
-                        </div>
-                      </div>
-                      <div className="info pl-2">
-                        <h6>Touser for Female...</h6>
-                        <p>
-                          Women's exclusive summer Tops and skirt set for Female
-                          Tops and skirt set
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>Both </td>
-                  <td>richman</td>
-                  <td>
-                    <div style={{ width: "50px" }}>
-                      <span className="new">$19.00</span>
-                      <del className="old text-danger">$21.00</del>
-                    </div>
-                  </td>
-                  <td>30</td>
-                  <td>4.9(16)</td>
-                  <td>380</td>
-                  <td>$38k</td>
-                  <td>
-                    <div className="actions d-flex align-items-center">
-                      <Button className="secondary" color="secondary">
-                        <FaEye />
-                      </Button>
-                      <Button className="success" color="success">
-                        <HiPencilAlt />
-                      </Button>
-                      <Button className="error" color="error">
-                        <MdDelete />
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#10</td>
-                  <td>
-                    <div className="d-flex align-item-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img src={img10} alt="" srcset="" className="w-100" />
-                        </div>
-                      </div>
-                      <div className="info pl-2">
-                        <h6>Watches ...</h6>
-                        <p>
-                          Women's exclusive summer Tops and skirt set for Female
-                          Tops and skirt set
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>All</td>
-                  <td>richman</td>
-                  <td>
-                    <div style={{ width: "50px" }}>
-                      <span className="new">$19.00</span>
-                      <del className="old text-danger">$21.00</del>
-                    </div>
-                  </td>
-                  <td>30</td>
-                  <td>4.9(16)</td>
-                  <td>380</td>
-                  <td>$38k</td>
-                  <td>
-                    <div className="actions d-flex align-items-center">
-                      <Button className="secondary" color="secondary">
-                        <FaEye />
-                      </Button>
-                      <Button className="success" color="success">
-                        <HiPencilAlt />
-                      </Button>
-                      <Button className="error" color="error">
-                        <MdDelete />
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>#11</td>
-                  <td>
-                    <div className="d-flex align-item-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img src={img11} alt="" srcset="" className="w-100" />
-                        </div>
-                      </div>
-                      <div className="info pl-2">
-                        <h6>Sweater for Female...</h6>
-                        <p>
-                          Women's exclusive summer Tops and skirt set for Female
-                          Tops and skirt set
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>womans</td>
-                  <td>richman</td>
-                  <td>
-                    <div style={{ width: "50px" }}>
-                      <span className="new">$19.00</span>
-                      <del className="old text-danger">$21.00</del>
-                    </div>
-                  </td>
-                  <td>30</td>
-                  <td>4.9(16)</td>
-                  <td>380</td>
-                  <td>$38k</td>
-                  <td>
-                    <div className="actions d-flex align-items-center">
-                      <Button className="secondary" color="secondary">
-                        <FaEye />
-                      </Button>
-                      <Button className="success" color="success">
-                        <HiPencilAlt />
-                      </Button>
-                      <Button className="error" color="error">
-                        <MdDelete />
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
-            <div className="d-flex   tableFooter">
+            <div className="d-flex tableFooter">
               <p>
-                showing<b> 12</b> of <b>60</b> reults
+                showing <b>12</b> of <b>60</b> results
               </p>
               <Pagination
                 count={10}
