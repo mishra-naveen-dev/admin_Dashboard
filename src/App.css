@@ -30,10 +30,11 @@ body {
   border-radius: 8px !important;
 }
 .btn-blue:hover {
-  background: #0858f7f5 !important;
+  background: #0858f5 !important;
 }
 .btn-lg {
-  padding: 5px 25px !important;
+  padding: 10px 25px !important;
+  font-size: 16px !important;
 }
 .btn-big {
   padding: 10px 25px !important;

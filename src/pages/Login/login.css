@@ -25,9 +25,13 @@
   margin: auto;
 }
 
+.loginSection .loginBox .wrapper .form-group {
+  margin-top: 18px !important;
+}
+
 .loginSection .loginBox .wrapper {
   width: 100%;
-  height: 320px;
+  height: auto;
   background: #f0f0f0;
   position: relative;
   z-index: 100;
@@ -68,4 +72,49 @@
 }
 .toggleShowPassword svg {
   font-size: 22px;
+}
+.link {
+  color: #5e5d72;
+  text-decoration: none;
+  font-weight: 600;
+}
+.link:hover {
+  color: #0858f7 !important;
+  text-decoration: none;
+}
+
+.link.color {
+  color: #0858f7 !important;
+  text-decoration: none;
+}
+.loginSection .loginBox .wrapper .link {
+  font-size: 14px !important;
+}
+
+.loginSection .loginBox .wrapper .or span.line {
+  display: block;
+  width: 37%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.loginSection .loginBox .wrapper .or span.txt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 60%;
+}
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  font-size: 14px;
 }
