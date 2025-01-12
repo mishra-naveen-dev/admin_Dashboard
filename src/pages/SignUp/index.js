@@ -7,6 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaLinkedin } from "react-icons/fa";
 import { RiAccountPinCircleFill } from "react-icons/ri";
 import { IoShieldCheckmarkSharp } from "react-icons/io5";
+import { FaHome } from "react-icons/fa";
 import { BsEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
@@ -48,7 +49,27 @@ const SignUp = () => {
       <section className="loginSection signUpSection">
         {/* part 1 */}
         <div className="row">
-          <div className="col-md-8"></div>
+          <div className="col-md-8 d-flex flex-column align-items-center justify-content-center part1">
+            <h1>
+              {" "}
+              Cutting✂️-Edge Fashion Ecommerce🛍️ Dashboard & Admin Panel{" "}
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+              explicabo laudantium maxime labore rerum enim quasi delectus alias
+              earum odio laborum provident consequatur fuga, voluptatem suscipit
+              sapiente adipisci excepturi velit doloribus nisi esse aperiam
+              Doloremque.
+            </p>
+            <div className="mt-4 w-100">
+              <Link to={"/"}>
+                <Button className="btn-blue btn-lg btn-big ">
+                  <FaHome className="mr-2" />
+                  Go to Home
+                </Button>
+              </Link>
+            </div>
+          </div>
 
           {/* part2 */}
           <div className="col-md-4 pr-0">
@@ -170,7 +191,6 @@ const SignUp = () => {
                     )}
                   </div>
 
-                  
                   <div className="form-group text-center mb-0">
                     <div className="form-check">
                       <input
@@ -188,13 +208,13 @@ const SignUp = () => {
                       </label>
                     </div>
                     <div className="form-group mt-2">
-                    <Button
-                      className="btn-blue btn-lg w-100 btn-big"
-                      disabled={!isChecked}
-                    >
-                      Sign Up
-                    </Button>
-                  </div>
+                      <Button
+                        className="btn-blue btn-lg w-100 btn-big"
+                        disabled={!isChecked}
+                      >
+                        Sign Up
+                      </Button>
+                    </div>
                     <div className="d-flex align-items-center justify-content-center or mt-3 mb-3">
                       <span className="line"></span>
                       <span className="txt">or</span>
@@ -203,7 +223,6 @@ const SignUp = () => {
                     {/* login with different different way  */}
                     <div className="logolignSec text-center d-block">
                       <Button
-                      
                         style={{ borderColor: "#DB4437", color: "#DB4437" }}
                       >
                         <div className="icon-wrapper">
@@ -227,13 +246,10 @@ const SignUp = () => {
                     </div>
                   </div>
                 </form>
-              </div>
-
-              <div className="wrapper mt-3 card border footer p-3">
-                <span className="text-center">
+                <span className="text-center d-block mt-3 mb-0">
                   Already have an account?{" "}
                   <Link to={"/login"} className="link color ml-2">
-                    Login
+                    Sign In
                   </Link>
                 </span>
               </div>

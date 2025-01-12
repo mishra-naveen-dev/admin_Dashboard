@@ -50,6 +50,9 @@ const Dashboard = () => {
     setAnchorEl(null);
   };
 
+  useEffect(() => {
+    context.setIsHideSidebarAndHeader(false);
+  }, []);
   const [showBy, setshowBy] = useState("");
   const [CatBy, setCatBy] = useState("");
   const [BrandBy, setbrandBy] = useState("");
