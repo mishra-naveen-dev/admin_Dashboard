@@ -1,0 +1,34 @@
+.loginSection {
+  width: 100%;
+  height: 100vh;
+  padding: 35px 25px;
+  background: #fff;
+  position: relative;
+}
+.loginBox .logo img {
+  border-radius: 10px !important;
+}
+.loginPattern {
+  width: 100%;
+  height: 100%;
+  opacity: 0.09;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 99;
+  pointer-events: none;
+}
+.loginSection .loginBox {
+  width: 400px;
+  height: auto;
+
+  margin: auto;
+}
+
+.loginSection .loginBox .wrapper {
+  width: 100%;
+  height: 320px;
+  background: #f0f0f0;
+  position: relative;
+  z-index: 100;
+}

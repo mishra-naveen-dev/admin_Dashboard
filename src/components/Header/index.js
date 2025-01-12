@@ -23,8 +23,6 @@ const Header = () => {
   const openMyAcc = Boolean(anchorEl);
   const openNoticfication = Boolean(isOpennotificationDrop);
 
-  const [isLogin, setIsLogin] = useState(false);
-
   const context = useContext(MyContext);
 
   const toggleSidebar = () => {
@@ -426,8 +424,11 @@ const Header = () => {
             </div>
 
             {/* myacc */}
-            {isLogin === false ? (
-              <Button classname="btn-blue">Sign In</Button>
+            {context.isLogin === false ? (
+              <Link to={"/login"}>
+                
+                <Button className="btn-blue btn-lg btn-round">Sign In</Button>
+              </Link>
             ) : (
               <div className="myAccWrapper">
                 <Button

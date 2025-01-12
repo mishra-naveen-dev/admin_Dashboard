@@ -14,9 +14,15 @@ body {
   background: #ccc !important;
 }
 
+.full {
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
+  width: 100% !important;
+}
+
 .btn-blue {
   background: #0858f7 !important;
-  font-size: 14px !important;
+  font-size: 15px !important;
   font-weight: 600 !important;
   color: #fff !important;
   border-radius: 5px !important;
@@ -24,6 +30,12 @@ body {
 }
 .btn-blue:hover {
   background: #0858f7f5 !important;
+}
+.btn-lg {
+  padding: 5px 25px !important;
+}
+.btn-round {
+  border-radius: 30px !important;
 }
 .btn-white {
   background: #fff !important;
