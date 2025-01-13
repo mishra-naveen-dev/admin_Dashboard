@@ -10,6 +10,18 @@ A modern and responsive admin dashboard built using React, designed to manage an
 - Integrated Material UI for styling
 - Easy navigation with sidebar and top bar
 
+## Screenshots
+
+Here are some screenshots of the application:
+
+### Dashboard Overview
+
+![Dashboard Overview](./src/assets/ss1.webp)
+
+### User Management
+
+![User Management](./src/assets/ss2.webp)
+
 ## Live Demo
 
 Check out the live deployment here: [Admin Dashboard](https://admin-dashboard-seven-omega-79.vercel.app/)
