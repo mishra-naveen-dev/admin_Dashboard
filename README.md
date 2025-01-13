@@ -16,7 +16,7 @@ Here are some screenshots of the application:
 
 ### Dashboard Overview
 
-![Dashboard Overview](./src/assets/ss1.webp)
+![Dashboard Overview](./src/assets/ss11.webp)
 
 ### User Management
 
