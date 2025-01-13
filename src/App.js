@@ -1,4 +1,10 @@
-import React, { createContext, useState, Suspense, lazy, useEffect } from "react";
+import React, {
+  createContext,
+  useState,
+  Suspense,
+  lazy,
+  useEffect,
+} from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -21,11 +27,20 @@ function App() {
   const [isLogin, setIsLogin] = useState(false);
   //
   const [isHideSidebarAndHeader, setIsHideSidebarAndHeader] = useState(false);
+  const [themeMode, setThemeMode] = useState(true);
 
   //
-
-
-
+  useEffect(() => {
+    if (themeMode === true) {
+      document.body.classList.remove("dark");
+      document.body.classList.add("light");
+      localStorage.setItem("themeMode", "light");
+    } else {
+      document.body.classList.remove("light");
+      document.body.classList.add("dark");
+      localStorage.setItem("themeMode", "dark");
+    }
+  }, [themeMode]);
   //
   const values = {
     isToggleSidebar,
@@ -34,6 +49,8 @@ function App() {
     setIsLogin,
     isHideSidebarAndHeader,
     setIsHideSidebarAndHeader,
+    themeMode,
+    setThemeMode,
   };
 
   return (

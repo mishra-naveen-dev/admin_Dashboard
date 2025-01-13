@@ -52,6 +52,8 @@ const Dashboard = () => {
 
   useEffect(() => {
     context.setIsHideSidebarAndHeader(false);
+
+    window.scrollTo(0, 0);
   }, []);
   const [showBy, setshowBy] = useState("");
   const [CatBy, setCatBy] = useState("");

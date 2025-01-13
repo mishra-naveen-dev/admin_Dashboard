@@ -23,6 +23,7 @@ const SignUp = () => {
 
   useEffect(() => {
     context.setIsHideSidebarAndHeader(true);
+    window.scrollTo(0, 0);
   }, []);
 
   const focusInput = (index) => {
@@ -52,7 +53,9 @@ const SignUp = () => {
           <div className="col-md-8 d-flex flex-column align-items-center justify-content-center part1">
             <h1>
               {" "}
-              Cutting✂️-Edge Fashion Ecommerce🛍️ Dashboard & Admin Panel{" "}
+              Cutting✂️-Edge Fashion{" "}
+              <span className="text-sky">Ecommerce🛍️ Dashboard </span>& Admin
+              Panel{" "}
             </h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
@@ -97,6 +100,7 @@ const SignUp = () => {
                       placeholder="enter your name"
                       onFocus={() => focusInput(0)}
                       onBlur={() => setInputIndex(null)}
+                      autoFocus
                     />
                   </div>
                   {/* email */}

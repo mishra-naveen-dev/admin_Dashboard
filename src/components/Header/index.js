@@ -73,13 +73,16 @@ const Header = () => {
             <SearchBox className="" />
           </div>
           <div className="col-sm-7 d-flex align-items-center justify-content-end part3">
-            <Button className="rounded-circle mr-3">
+            <Button
+              className="rounded-circle mr-3"
+              onClick={() => context.setThemeMode(!context.themeMode)}
+            >
               <CiLight />
             </Button>
             <Button className="rounded-circle mr-3">
               <FaCartShopping />
             </Button>
-            <div className="dropdownWrapper">
+            <div className="dropdownWrapper position-relative">
               <Button
                 className="rounded-circle mr-3"
                 onClick={handleOpenEmailDrop}
@@ -426,7 +429,6 @@ const Header = () => {
             {/* myacc */}
             {context.isLogin === false ? (
               <Link to={"/login"}>
-                
                 <Button className="btn-blue btn-lg btn-round">Sign In</Button>
               </Link>
             ) : (

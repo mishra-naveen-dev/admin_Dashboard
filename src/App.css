@@ -99,11 +99,9 @@ header button.rounded-circle svg {
 header button.rounded-circle svg:hover {
   color: #0156ff !important;
 }
-/* header .part2 {
-  padding-left: 8rem !important;
-} */
+
 .searchBox {
-  /* gap: 10px !important; */
+  gap: 5px !important;
   width: 900px !important;
   height: 43px;
   background: #f0f5ff;
@@ -237,7 +235,7 @@ header button.rounded-circle svg:hover {
 
 .dropdown_list .menu-scroll-container {
   max-height: 300px;
-  overflow-y: auto; /* Enables vertical scrolling */
+  overflow-y: auto;
   padding: 8px;
   overflow-x: 0px;
 }
@@ -284,16 +282,16 @@ header button.rounded-circle svg:hover {
 }
 
 .main .sidebarWrapper .sidebar ::-webkit-scrollbar {
-  width: 8px; /* Increase scrollbar width for better visibility */
+  width: 8px;
 }
 
 .main .sidebarWrapper .sidebar ::-webkit-scrollbar-thumb {
-  background: #0858f7 !important; /* Ensure scrollbar thumb is visible */
-  border-radius: 4px; /* Add some rounding for better aesthetics */
+  background: #0858f7 !important;
+  border-radius: 4px;
 }
 
 .main .sidebarWrapper .sidebar ::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Add a track color for better contrast */
+  background: #f1f1f1;
 }
 
 .main .contentWrapper {
@@ -304,4 +302,20 @@ header button.rounded-circle svg:hover {
 .main .contentWrapper.toggle {
   width: 100%;
   flex: 0 0 100%;
+}
+
+/* dark and light theme  */
+.dark {
+  background: #292929 !important;
+  color: #fff !important;
+}
+
+body.dark header {
+  background: #112143 !important;
+}
+body.dark header .logo span {
+  color: #f2f7fc !important;
+}
+body.dark header button.rounded-circle {
+  background: #12254e !important;
 }
