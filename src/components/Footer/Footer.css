@@ -1,9 +1,8 @@
 .footer {
   background-color: #f8f9fa;
-  padding: 1rem;
-  border-top: 1px solid #e7e7e7;
+
   display: flex;
-  justify-content: space-between;
+
   align-items: center;
 }
 
@@ -27,4 +26,17 @@
 
 .footer .text-blue-500 .hover:underline:hover {
   text-decoration: underline;
+}
+.footer .nameFooter {
+  left: 100px;
+}
+body.dark .footer {
+  background: #12254e !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.main .mc-footer {
+  font-size: 14px;
+  margin-top: 24px;
+  text-align: center;
+  width: 100%;
 }
