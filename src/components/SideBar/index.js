@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, lazy } from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logo.webp";
 import "../../App.css";
 import "./SideBar.css";
-
 //icon
 import { RiDashboardFill } from "react-icons/ri";
 import { MdArrowForwardIos } from "react-icons/md";
@@ -23,6 +22,7 @@ import { FaLanguage } from "react-icons/fa6";
 import { MdOutlineInfo } from "react-icons/md";
 import { FaUnlockKeyhole } from "react-icons/fa6";
 import { MyContext } from "../../App";
+
 
 const SideBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -48,7 +48,7 @@ const SideBar = () => {
 
   return (
     <>
-      <div className="sidebar">
+      <div className="sidebar ">
         <ul>
           <li>
             <Link to="/dashboard">
@@ -56,7 +56,7 @@ const SideBar = () => {
                 className={`w-100 ${activeTab === 0 ? "active" : ""}`}
                 onClick={() => isOpenSubmenu(0)}
               >
-                <span className="icon">
+                <span className="icon ">
                   <RiDashboardFill />
                 </span>
                 Dashboard
@@ -90,7 +90,7 @@ const SideBar = () => {
             >
               <ul className="submenu">
                 <li>
-                  <Link to="#">Product List</Link>
+                  <Link to="/product">Product List</Link>
                 </li>
                 <li>
                   <Link to="#">Product View</Link>

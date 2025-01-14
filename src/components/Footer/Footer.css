@@ -1,0 +1,30 @@
+.footer {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-top: 1px solid #e7e7e7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer .text-gray-600 {
+  color: #6c757d;
+}
+
+.footer .text-blue-500 a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer .text-blue-500 a:hover {
+  text-decoration: underline;
+}
+
+.footer .text-blue-500 .hover:underline {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer .text-blue-500 .hover:underline:hover {
+  text-decoration: underline;
+}

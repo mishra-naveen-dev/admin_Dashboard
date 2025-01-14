@@ -1,0 +1,146 @@
+@import url("https://cdn.tailwindcss.com");
+.product-right-content {
+  padding: 90px 30px;
+  padding-bottom: 10px;
+}
+.productdashboardBoxWrapper {
+  margin: 0 auto;
+  padding: 90px 30px;
+  background: transparent !important;
+  background-color: #f3f4f6;
+}
+
+
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.sm\:grid-cols-2 {
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.lg\:grid-cols-3 {
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.from-blue-500 {
+  --tw-gradient-from: #3b82f6;
+  --tw-gradient-stops: var(--tw-gradient-from),
+    var(--tw-gradient-to, rgba(59, 130, 246, 0));
+}
+
+.to-blue-700 {
+  --tw-gradient-to: #1d4ed8;
+}
+
+.from-green-500 {
+  --tw-gradient-from: #10b981;
+  --tw-gradient-stops: var(--tw-gradient-from),
+    var(--tw-gradient-to, rgba(16, 185, 129, 0));
+}
+
+.to-green-700 {
+  --tw-gradient-to: #047857;
+}
+
+.from-purple-500 {
+  --tw-gradient-from: #a855f7;
+  --tw-gradient-stops: var(--tw-gradient-from),
+    var(--tw-gradient-to, rgba(168, 85, 247, 0));
+}
+
+.to-pink-500 {
+  --tw-gradient-to: #ec4899;
+}
+
+.text-white {
+  color: white;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.-top-4 {
+  top: -1rem;
+}
+
+.right-4 {
+  right: 1rem;
+}
+
+.text-blue-300 {
+  color: #93c5fd;
+}
+
+.text-green-300 {
+  color: #6ee7b7;
+}
+
+.text-pink-300 {
+  color: #f9a8d4;
+}
+.card-border {
+  border-radius: 20px;
+}
+body.dark .productdashboardBoxWrapper .header {
+  background: #122755 !important;
+}
+body.dark .productdashboardBoxWrapper .header .font-bold {
+  color: #fff !important;
+}
+.product-list {
+  transition: width 0.3s ease;
+}
+
+.product-list.with-sidebar {
+  width: calc(100% - 70px); /* Adjust based on your sidebar width */
+}
+
+.product-list.full-width {
+  width: 100%;
+}

@@ -16,6 +16,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import Divider from "@mui/material/Divider";
 import { MyContext } from "../../App";
 import SearchBox from "../SearchBox";
+import Dashboard from "../../pages/Dashboard"; // Import Dashboard component
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -57,7 +58,7 @@ const Header = () => {
       <div className="container-fluid w-100">
         <div className="row d-flex align-items-center w-100">
           <div className="col-sm-2 part1">
-            <Link to={"/"} className="d-flex align-items-center logo">
+            <Link to={"/dashboard"} className="d-flex align-items-center logo"> {/* Updated link */}
               <img src={logo} alt="402" />
               <span className="ml-2">RAJWADASTORE</span>
             </Link>
@@ -220,7 +221,7 @@ const Header = () => {
                     </div>
                   </MenuItem>
                 </div>
-                <div className="pl-3 pr-3 w-100 pt-3 pb-1">
+                <div className="pl-3 pr-3  pt-3 pb-1">
                   <Button className="btn-white w-100 align-self-center">
                     View all emails
                   </Button>
@@ -242,7 +243,7 @@ const Header = () => {
                 onClose={handleClosenotificationsDrop}
                 onClick={handleClosenotificationsDrop}
                 transformOrigin={{ horizontal: "right", vertical: "top" }}
-                anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+                anchorOrigin={{ horizontal: "right", vertical: "bottom-end" }}
               >
                 <div className="head pl-3 pb-0">
                   <h4>Orders(12)</h4>

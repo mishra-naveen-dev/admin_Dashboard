@@ -1,0 +1,23 @@
+.header {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.header .text-blue-500 a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.header .text-blue-500 a:hover {
+  text-decoration: underline;
+}

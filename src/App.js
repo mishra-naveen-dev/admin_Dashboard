@@ -11,12 +11,15 @@ import "./App.css";
 import "./components/SideBar/SideBar.css";
 import "./pages/Dashboard/dashboard.css";
 import "./pages/Login/login.css";
+import "./pages/Product/product.css";
 
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Header = lazy(() => import("./components/Header"));
 const Sidebar = lazy(() => import("./components/SideBar"));
 const Login = lazy(() => import("./pages/Login"));
 const SignUp = lazy(() => import("./pages/SignUp"));
+const Product = lazy(() => import("./pages/Product"));
+const Footer = lazy(() => import("./components/Footer/Footer"));
 
 const MyContext = createContext();
 
@@ -80,7 +83,13 @@ function App() {
                 <Route path="/dashboard" exact={true} element={<Dashboard />} />
                 <Route path="/login" exact={true} element={<Login />} />
                 <Route path="/signUp" exact={true} element={<SignUp />} />
+                <Route
+                  path="/product"
+                  exact={true}
+                  element={<Product />}
+                ></Route>
               </Routes>
+              <Footer />
             </div>
           </div>
         </Suspense>

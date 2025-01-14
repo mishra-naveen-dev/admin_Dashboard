@@ -305,17 +305,138 @@ header button.rounded-circle svg:hover {
 }
 
 /* dark and light theme  */
-.dark {
-  background: #292929 !important;
-  color: #fff !important;
+body.dark {
+  background: #071739 !important;
 }
 
 body.dark header {
   background: #112143 !important;
 }
 body.dark header .logo span {
-  color: #f2f7fc !important;
+  color: #fff !important;
+  opacity: 0.9 !important;
 }
 body.dark header button.rounded-circle {
+  background: #122755 !important;
+}
+body.dark header button.rounded-circle svg {
+  color: #fff !important;
+}
+body.dark .searchBox {
   background: #12254e !important;
+}
+body.dark .searchBox input,
+body.dark .searchBox input::-webkit-input-placeholder,
+body.dark .searchBox svg {
+  color: #fff !important;
+}
+body.dark .myAcc {
+  color: #fff !important;
+}
+
+body.dark .myAcc .userInfo * {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+body.dark .MuiPaper-elevation {
+  background: #12254e !important;
+}
+
+body.dark .MuiPaper-elevation li *,
+body.dark .MuiPaper-elevation li {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+body.dark .dropdown_list li.MuiButtonBase-root {
+  background-color: #12254e !important;
+  background: #12254e !important;
+}
+body.dark .dropdown_list .head h4 {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+body.dark .main .sidebarWrapper .sidebar {
+  background: #12254e !important;
+}
+
+body.dark .main .sidebarWrapper .sidebar ul li button {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+body.dark .main .sidebarWrapper .sidebar ul li button svg {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+body.dark .main .sidebarWrapper .sidebar ul li button.active {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark .main .sidebarWrapper .sidebar ul li button.active .icon svg {
+  color: #2605e3 !important;
+}
+body.dark .main .sidebarWrapper .sidebar ul li button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+body.dark main .contentWrapper {
+  background: #12254e !important;
+}
+body.dark .main .sidebarWrapper .sidebar ul .submenu::before {
+  background: rgba(255, 255, 255, 0.2);
+}
+body.dark .main .sidebarWrapper .sidebar ul .submenu li a {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+body.dark .main .sidebarWrapper .sidebar ul .submenu li a:hover {
+  color: #0858f7 !important;
+}
+body.dark .logoutWrapper .logoutBox {
+  background-image: linear-gradient(#183e8c, #163474) !important;
+  background: transparent !important;
+}
+body.dark .card {
+  background: #112143 !important ;
+}
+body.dark .card .hd {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.8);
+}
+body.dark .cardFilters .col-md-3 h4 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+body.dark .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark p,
+body.dark span,
+body.dark .css-1iw3t7y-MuiFormControl-root,
+body.dark .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon,
+body.dark .MuiSelect-select body.dark .MuiSelect-outlined,
+body.dark .css-lohd6h-MuiSvgIcon-root-MuiSelect-icon,
+body.dark em {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.dark .css-1d3z3hw-MuiOutlinedInput-notchedOutline,
+body.dark .css-j0riat-MuiSelect-nativeInput {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+body.dark .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+body.dark table td {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+body.dark .table-bordered td,
+.table-bordered th {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+body.dark .css-1bug3cd-MuiButtonBase-root-MuiPaginationItem-root:hover {
+  background: #0858f7 !important;
+  color: #fff !important;
+}
+body.dark .css-1bug3cd-MuiButtonBase-root-MuiPaginationItem-root {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+body.dark .table-responsive::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3) !important;
 }
