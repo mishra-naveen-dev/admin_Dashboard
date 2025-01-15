@@ -409,7 +409,6 @@ body.dark h6,
 body.dark p,
 body.dark span,
 body.dark .css-1iw3t7y-MuiFormControl-root,
-
 body.dark .MuiSelect-select body.dark .MuiSelect-outlined,
 body.dark .css-lohd6h-MuiSvgIcon-root-MuiSelect-icon,
 body.dark em {
@@ -471,3 +470,11 @@ body.dark .boxChart .BoxChartWrapper div p {
 body.dark .boxChart .BoxChartWrapper div i {
   color: rgba(255, 255, 255, 0.7) !important;
 }
+
+/* product view */
+.slick-slide{
+  outline: none !important;
+}
+/* .slick-slide::before {
+  display: block !important;
+} */

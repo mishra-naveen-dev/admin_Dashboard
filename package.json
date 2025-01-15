@@ -21,6 +21,8 @@
     "react-icons": "^5.4.0",
     "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.30.3",
+    "slick-slider": "^1.8.2",
     "styled-components": "^6.1.13",
     "web-vitals": "^2.1.4"
   },

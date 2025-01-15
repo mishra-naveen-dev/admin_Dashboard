@@ -23,7 +23,6 @@ import { MdOutlineInfo } from "react-icons/md";
 import { FaUnlockKeyhole } from "react-icons/fa6";
 import { MyContext } from "../../App";
 
-
 const SideBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -93,7 +92,7 @@ const SideBar = () => {
                   <Link to="/product">Product List</Link>
                 </li>
                 <li>
-                  <Link to="#">Product View</Link>
+                  <Link to="/product/details">Product View</Link>
                 </li>
                 <li>
                   <Link to="#">Product Upload</Link>

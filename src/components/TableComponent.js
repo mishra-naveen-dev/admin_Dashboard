@@ -4,6 +4,7 @@ import { FaEye, FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import { HiPencilAlt } from "react-icons/hi";
 import { MdDelete } from "react-icons/md";
 import Pagination from "@mui/material/Pagination";
+import { Link } from "react-router-dom";
 
 //img
 import img1 from "../assets/image/skirtim1.webp";
@@ -258,9 +259,9 @@ const TableComponent = () => {
               <td>{product.sales}</td>
               <td>
                 <div className="actions d-flex align-items-center">
-                  <Button className="secondary" color="secondary">
-                    <FaEye />
-                  </Button>
+                 
+                    <Link to="/product/details"><Button className="secondary" color="secondary"><FaEye />   </Button></Link>
+                 
                   <Button className="success" color="success">
                     <HiPencilAlt />
                   </Button>

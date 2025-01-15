@@ -19,6 +19,8 @@ const Sidebar = lazy(() => import("./components/SideBar"));
 const Login = lazy(() => import("./pages/Login"));
 const SignUp = lazy(() => import("./pages/SignUp"));
 const Product = lazy(() => import("./pages/Product"));
+const ProductDetails = lazy(() => import("./pages/ProductDetails"));
+
 const Footer = lazy(() => import("./components/Footer/Footer"));
 
 const MyContext = createContext();
@@ -83,11 +85,12 @@ function App() {
                 <Route path="/dashboard" exact={true} element={<Dashboard />} />
                 <Route path="/login" exact={true} element={<Login />} />
                 <Route path="/signUp" exact={true} element={<SignUp />} />
+                <Route path="/product" exact={true} element={<Product />} />
                 <Route
-                  path="/product"
+                  path="/product/details"
                   exact={true}
-                  element={<Product />}
-                ></Route>
+                  element={<ProductDetails />}
+                />
               </Routes>
               <Footer />
             </div>
