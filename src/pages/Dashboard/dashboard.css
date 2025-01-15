@@ -183,6 +183,12 @@ p {
   height: 32px !important;
   margin: 0px 3px !important;
 }
+.table tbody .actions .MuiButton-root .MuiSvgIcon-root {
+  transition: none !important;
+  transform: none !important;
+  width: auto !important;
+  height: auto !important;
+}
 .table tbody .actions button.secondary {
   background: rgba(203, 60, 231, 0.2) !important;
 }
@@ -252,4 +258,3 @@ table.v-align td .productBox {
   font-weight: 500;
   margin-bottom: 0px;
 }
-
