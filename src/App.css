@@ -440,3 +440,34 @@ body.dark .css-1bug3cd-MuiButtonBase-root-MuiPaginationItem-root {
 body.dark .table-responsive::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.3) !important;
 }
+
+body.dark .BoxChartWrapper {
+  background: #112143 !important ;
+}
+
+body.dark .boxChart {
+  background: #112143 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.dark .boxChart .BoxChartWrapper {
+  background: #112143 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.dark .boxChart .BoxChartWrapper div {
+  background: #112143 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.dark .boxChart .BoxChartWrapper div h2 {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.dark .boxChart .BoxChartWrapper div p {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.dark .boxChart .BoxChartWrapper div i {
+  color: rgba(255, 255, 255, 0.7) !important;
+}

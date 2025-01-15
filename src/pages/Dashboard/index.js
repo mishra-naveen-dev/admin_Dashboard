@@ -9,6 +9,8 @@ import {
   FaRegStar,
   FaEye,
 } from "react-icons/fa";
+import { SlCalender } from "react-icons/sl";
+
 import { HiOutlineShoppingCart, HiPencilAlt } from "react-icons/hi";
 import { IoBagCheck } from "react-icons/io5";
 import { GrStar } from "react-icons/gr";
@@ -16,14 +18,21 @@ import { GrStar } from "react-icons/gr";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import DashboardBox from "./components/dashboardBox";
-import { data, options } from "./chartData"; // Assuming chartData.js contains the data and options
 import { MyContext } from "../../App";
 import "./dashboard.css";
 import FormControl from "@mui/material/FormControl";
-
+import InputAdornment from "@mui/material/InputAdornment";
+import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import TableComponent from "../../components/TableComponent";
-
+import {
+  data1,
+  options1,
+  data2,
+  options2,
+  pieData,
+  pieOptions,
+} from "./chartData";
 
 const Dashboard = () => {
   const ITEM_HEIGHT = 48;
@@ -41,9 +50,9 @@ const Dashboard = () => {
 
   useEffect(() => {
     context.setIsHideSidebarAndHeader(false);
-
     window.scrollTo(0, 0);
   }, []);
+
   const [showBy, setshowBy] = useState("");
   const [CatBy, setCatBy] = useState("");
   const [BrandBy, setbrandBy] = useState("");
@@ -152,8 +161,8 @@ const Dashboard = () => {
                 chartType="AreaChart"
                 width="100%"
                 height="200px"
-                data={data}
-                options={options}
+                data={data2}
+                options={options2}
                 className="custom-chart"
               />
             </div>
@@ -254,6 +263,256 @@ const Dashboard = () => {
 
           {/* table */}
           <TableComponent />
+        </div>
+        {/* part4  */}
+        <div className="boxChart">
+          <div
+            className="BoxChartWrapper"
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "20px",
+            }}
+          >
+            <div
+              style={{
+                flex: "1 1 60%",
+                backgroundColor: "#fff",
+                padding: "20px",
+                borderRadius: "8px",
+                boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: "20px",
+                }}
+              >
+                <h2 style={{ fontSize: "18px", fontWeight: "600" }}>
+                  Revenue Report
+                </h2>
+
+                <div className="row cardFilters mt-2 mr-3">
+                  <FormControl className="w-100" size="small">
+                    <Select
+                      value={showBy}
+                      onChange={(e) => setshowBy(e.target.value)}
+                      displayEmpty
+                      inputProps={{ "aria-label": "Without label" }}
+                      labelId="demo-select-small-label"
+                      className="w-100"
+                      startAdornment={
+                        <InputAdornment position="start">
+                          <SlCalender
+                            style={{ color: "#6c757d", fontSize: "24px" }}
+                          />
+                        </InputAdornment>
+                      }
+                    >
+                      <MenuItem value="">
+                        <em>Select option</em>
+                      </MenuItem>
+                      <MenuItem value={10}>2015</MenuItem>
+                      <MenuItem value={20}>2016</MenuItem>
+                      <MenuItem value={30}>2017</MenuItem>
+                      <MenuItem value={10}>2018</MenuItem>
+                      <MenuItem value={20}>2019</MenuItem>
+                      <MenuItem value={30}>2020</MenuItem>
+                      <MenuItem value={10}>2021</MenuItem>
+                      <MenuItem value={20}>2022</MenuItem>
+                      <MenuItem value={30}>2023</MenuItem>
+                    </Select>
+                  </FormControl>
+                </div>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: "20px",
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <i
+                    className="fas fa-briefcase"
+                    style={{
+                      color: "#4285F4",
+                      fontSize: "24px",
+                      marginRight: "10px",
+                    }}
+                  ></i>
+                  <div>
+                    <p style={{ color: "#6c757d", marginBottom: "5px" }}>
+                      Invested
+                    </p>
+                    <p style={{ fontSize: "24px", fontWeight: "600" }}>
+                      3,387.67K
+                    </p>
+                  </div>
+                </div>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <i
+                    className="fas fa-bookmark"
+                    style={{
+                      color: "#34A853",
+                      fontSize: "24px",
+                      marginRight: "10px",
+                    }}
+                  ></i>
+                  <div>
+                    <p style={{ color: "#6c757d", marginBottom: "5px" }}>
+                      Earnings
+                    </p>
+                    <p style={{ fontSize: "24px", fontWeight: "600" }}>
+                      2,856.35K
+                    </p>
+                  </div>
+                </div>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <i
+                    className="fas fa-box"
+                    style={{
+                      color: "#FBBC05",
+                      fontSize: "24px",
+                      marginRight: "10px",
+                    }}
+                  ></i>
+                  <div>
+                    <p style={{ color: "#6c757d", marginBottom: "5px" }}>
+                      Expenses
+                    </p>
+                    <p style={{ fontSize: "24px", fontWeight: "600" }}>
+                      1,994.12K
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <Chart
+                chartType="AreaChart"
+                width="100%"
+                height="300px"
+                data={data1}
+                options={options1}
+              />
+            </div>
+            <div
+              style={{
+                flex: "1 1 35%",
+                backgroundColor: "#fff",
+                padding: "20px",
+                borderRadius: "8px",
+                boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+              }}
+            >
+              <h2
+                style={{
+                  fontSize: "18px",
+                  fontWeight: "600",
+                  marginBottom: "20px",
+                }}
+              >
+                Orders Overview
+              </h2>
+              <Chart
+                chartType="PieChart"
+                width="100%"
+                height="300px"
+                data={pieData}
+                options={pieOptions}
+              />
+              <div style={{ marginTop: "20px" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    marginBottom: "10px",
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <i
+                      className="fas fa-circle"
+                      style={{ color: "#4285F4", marginRight: "10px" }}
+                    ></i>
+                    <span>Pending</span>
+                  </div>
+                  <span>547</span>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    marginBottom: "10px",
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <i
+                      className="fas fa-circle"
+                      style={{ color: "#34A853", marginRight: "10px" }}
+                    ></i>
+                    <span>Shipped</span>
+                  </div>
+                  <span>398</span>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    marginBottom: "10px",
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <i
+                      className="fas fa-circle"
+                      style={{ color: "#FBBC05", marginRight: "10px" }}
+                    ></i>
+                    <span>Received</span>
+                  </div>
+                  <span>605</span>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    marginBottom: "10px",
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <i
+                      className="fas fa-circle"
+                      style={{ color: "#EA4335", marginRight: "10px" }}
+                    ></i>
+                    <span>Cancelled</span>
+                  </div>
+                  <span>249</span>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    marginBottom: "10px",
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <i
+                      className="fas fa-circle"
+                      style={{ color: "#FABB05", marginRight: "10px" }}
+                    ></i>
+                    <span>Refunded</span>
+                  </div>
+                  <span>176</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
