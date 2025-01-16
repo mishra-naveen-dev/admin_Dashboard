@@ -12,7 +12,8 @@ import "./components/SideBar/SideBar.css";
 import "./pages/Dashboard/dashboard.css";
 import "./pages/Login/login.css";
 import "./pages/Product/product.css";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Header = lazy(() => import("./components/Header"));
 const Sidebar = lazy(() => import("./components/SideBar"));

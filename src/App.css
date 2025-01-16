@@ -472,9 +472,21 @@ body.dark .boxChart .BoxChartWrapper div i {
 }
 
 /* product view */
-.slick-slide{
+.slick-slide {
   outline: none !important;
 }
 /* .slick-slide::before {
   display: block !important;
 } */
+.slider-image {
+  width:70px;
+  height: 80px;
+  object-fit: cover; 
+  padding: 4px; 
+}
+.slider-image2 {
+  width: 95px;
+  height: 80px; 
+  object-fit: cover; 
+  padding: 4px;
+}
