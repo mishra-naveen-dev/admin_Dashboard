@@ -1,10 +1,10 @@
 .productDetailsSection .productInfo .icon {
-  width: 18%;
-  flex: 0 0 20%;
+  width: 28%;
+  flex: 0 0 28%;
 }
 .productDetailsSection .productInfo .name {
-  width: 82%;
-  flex: 0 0 80%;
+  width: 72%;
+  flex: 0 0 72%;
   font-weight: 600;
 
   font-size: 15px;
@@ -20,8 +20,30 @@ body.dark .productDetailsSection .productInfo .name {
   font-size: 22px;
 }
 
-.productDetailsSection .productInfo .row .col-sm-7 span {
+.productDetailsSection .productInfo .row .col-sm-9 {
+  display: flex;
+  align-items: center;
+}
+.productDetailsSection .productInfo .row .col-sm-9 span {
   opacity: 0.8;
   font-size: 15px;
-  padding-left: 30px !important;
+  padding-left: 20px;
+}
+.tags {
+  margin-bottom: 0px !important;
+}
+.tags li span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px !important;
+  border-radius: 5px !important;
+  font-size: 13px !important;
+}
+body.dark .tags li span {
+  color: rgba(255, 255, 255, 0.8) !important;
+  background: #1b2b4d !important;
+}
+.tags li span:first-child {
+  padding-left: 0px !important ;
 }

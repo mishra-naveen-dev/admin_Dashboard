@@ -412,11 +412,16 @@ body.dark .css-1iw3t7y-MuiFormControl-root,
 body.dark .MuiSelect-select body.dark .MuiSelect-outlined,
 body.dark .css-lohd6h-MuiSvgIcon-root-MuiSelect-icon,
 body.dark em {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 h4 {
   line-height: 32px;
+}
+p {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 25px;
 }
 body.dark .css-1d3z3hw-MuiOutlinedInput-notchedOutline,
 body.dark .css-j0riat-MuiSelect-nativeInput {

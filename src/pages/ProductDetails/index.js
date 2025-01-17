@@ -8,7 +8,10 @@ import imgGe from "../../assets/imgKurta/01.webp";
 import img8 from "../../assets/imgKurta/03.webp";
 import img9 from "../../assets/imgKurta/04.webp";
 import img4 from "../../assets/imgKurta/01.webp";
-
+//
+import LinearProgress, {
+  LinearProgressProps,
+} from "@mui/material/LinearProgress";
 //icon import
 import { FaStore } from "react-icons/fa6";
 import { BiSolidCategory } from "react-icons/bi";
@@ -18,6 +21,7 @@ import { FaIndianRupeeSign } from "react-icons/fa6";
 import { MdStorage } from "react-icons/md";
 import { MdReviews } from "react-icons/md";
 import { MdPublishedWithChanges } from "react-icons/md";
+import { FaTags } from "react-icons/fa6";
 
 const img1 =
   "https://storage.googleapis.com/a1aa/image/t3Ir4KGoNABqGWVwwfuvaAE1Y79w5BTDkHwTnmyM5uw.jpg";
@@ -159,125 +163,223 @@ const ProductDetails = () => {
 
                 <div className="productInfo mt-3">
                   <div className="row mb-2">
-                    <div className="col-sm-5 d-flex align-items-center ">
+                    <div className="col-sm-3 d-flex align-items-center ">
                       <span className="icon">
                         <FaStore />
                       </span>
                       <span className="name">Brand </span>
                     </div>
 
-                    <div className="col-sm-7">
-                     : <span>Ecstasy</span>
+                    <div className="col-sm-9">
+                      : <span>Ecstasy</span>
                     </div>
                   </div>
                   {/* 2 */}
                   <div className="row mb-2">
-                    <div className="col-sm-5 d-flex align-items-center ">
+                    <div className="col-sm-3 d-flex align-items-center ">
                       <span className="icon">
                         <BiSolidCategory />
                       </span>
                       <span className="name">Category </span>
                     </div>
 
-                    <div className="col-sm-7">
-                     : <span>Man's</span>
+                    <div className="col-sm-9">
+                      : <span>Man's</span>
                     </div>
                   </div>
                   {/* 3 */}
                   <div className="row mb-2">
-                    <div className="col-sm-5 d-flex align-items-center ">
+                    <div className="col-sm-3 d-flex align-items-center ">
+                      <span className="icon">
+                        <FaTags />
+                      </span>
+                      <span className="name">Tags </span>
+                    </div>
+
+                    <div className="col-sm-9">
+                      :
+                      <span>
+                        <ul className="list list-inline tags sml">
+                          <li className="list-inline-item">
+                            <span>SUITE</span>
+                          </li>
+                          <li className="list-inline-item">
+                            <span>PARTY</span>
+                          </li>
+                          <li className="list-inline-item">
+                            <span>FORMAL</span>
+                          </li>
+                          <li className="list-inline-item">
+                            <span>DRESS</span>
+                          </li>
+                          <li className="list-inline-item">
+                            <span>MEN </span>
+                          </li>
+                        </ul>
+                      </span>
+                    </div>
+                  </div>
+                  {/* 3 */}
+                  <div className="row mb-2">
+                    <div className="col-sm-3 d-flex align-items-center ">
                       <span className="icon">
                         <IoMdColorPalette />
                       </span>
                       <span className="name">Color </span>
                     </div>
 
-                    <div className="col-sm-7">
-                     : <span>Red</span>
+                    <div className="col-sm-9">
+                      :{" "}
+                      <span>
+                        <ul className="list list-inline tags sml">
+                          <li className="list-inline-item">
+                            <span>RED</span>
+                          </li>
+                          <li className="list-inline-item">
+                            <span>BLACK</span>
+                          </li>
+                          <li className="list-inline-item">
+                            <span>BLUE</span>
+                          </li>
+                          <li className="list-inline-item">
+                            <span>GREY</span>
+                          </li>
+                          <li className="list-inline-item">
+                            <span>GREEN </span>
+                          </li>
+                        </ul>
+                      </span>
                     </div>
                   </div>
                   {/* 4 */}
                   <div className="row mb-2">
-                    <div className="col-sm-5 d-flex align-items-center ">
+                    <div className="col-sm-3 d-flex align-items-center ">
                       <span className="icon">
                         <MdOutlinePhotoSizeSelectLarge />
                       </span>
                       <span className="name">Size </span>
                     </div>
 
-                    <div className="col-sm-7">
-                      :<span>Ecstasy</span>
+                    <div className="col-sm-9">
+                      :
+                      <span>
+                        <ul className="list list-inline tags sml">
+                          <li className="list-inline-item">
+                            <span>SM</span>
+                          </li>
+                          <li className="list-inline-item">
+                            <span>MD</span>
+                          </li>
+                          <li className="list-inline-item">
+                            <span>LG</span>
+                          </li>
+                          <li className="list-inline-item">
+                            <span>XL</span>
+                          </li>
+                          <li className="list-inline-item">
+                            <span>XXL </span>
+                          </li>
+                        </ul>
+                      </span>
                     </div>
                   </div>
                   {/* 5 */}
                   <div className="row mb-2">
-                    <div className="col-sm-5 d-flex align-items-center ">
+                    <div className="col-sm-3 d-flex align-items-center">
                       <span className="icon">
                         <FaIndianRupeeSign />
                       </span>
                       <span className="name">Price </span>
                     </div>
-
-                    <div className="col-sm-7">
-                      :<span>Ecstasy</span>
+                    <div className="col-sm-9">
+                      :
+                      <span>
+                        <div style={{ width: "70px" }}>
+                          <span className="new">
+                            85.00 <del className="old text-danger">95.00</del>
+                          </span>
+                        </div>
+                      </span>
                     </div>
                   </div>
 
                   {/* 7 */}
-                  <div className="row mb-2">
-                    <div className="col-sm-5 d-flex align-items-center ">
-                      <span className="icon">
-                        <FaStore />
-                      </span>
-                      <span className="name">Price </span>
-                    </div>
-
-                    <div className="col-sm-7">
-                     : <span>Ecstasy</span>
-                    </div>
-                  </div>
 
                   {/* 8 */}
 
                   <div className="row mb-2">
-                    <div className="col-sm-5 d-flex align-items-center ">
+                    <div className="col-sm-3 d-flex align-items-center ">
                       <span className="icon">
                         <MdStorage />
                       </span>
                       <span className="name">Stock </span>
                     </div>
 
-                    <div className="col-sm-7">
+                    <div className="col-sm-9">
                       :<span>Ecstasy</span>
                     </div>
                   </div>
                   {/* 9 */}
                   <div className="row mb-2">
-                    <div className="col-sm-5 d-flex align-items-center ">
+                    <div className="col-sm-3 d-flex align-items-center ">
                       <span className="icon">
                         <MdReviews />
                       </span>
                       <span className="name">Review </span>
                     </div>
 
-                    <div className="col-sm-7">
-                     : <span>Ecstasy</span>
+                    <div className="col-sm-9">
+                      : <span>(03) Review</span>
                     </div>
                   </div>
                   {/* 10 */}
                   <div className="row mb-2">
-                    <div className="col-sm-5 d-flex align-items-center ">
+                    <div className="col-sm-3 d-flex align-items-center ">
                       <span className="icon">
                         <MdPublishedWithChanges />
                       </span>
                       <span className="name">Published </span>
                     </div>
 
-                    <div className="col-sm-7">
-                     : <span>14 Jan 2024</span>
+                    <div className="col-sm-9">
+                      : <span>14 Jan 2024</span>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* downside */}
+          <div className="p-4">
+            <h5 className="mt-4 mb-3">Product Description</h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Accusamus culpa voluptate commodi consequuntur vitae! Repudiandae,
+              sequi praesentium odio iure ipsam sapiente fuga quidem eveniet
+              quos dignissimos exercitationem ducimus id, repellendus iusto
+              error labore ullam ipsa natus deserunt nisi facere? Laborum
+              sapiente distinctio eligendi odit totam inventore fuga repellat
+              doloremque est corrupti harum beatae sit error doloribus, magnam
+              minima commodi fugiat autem! Dolorem esse, sequi est vero, culpa
+              adipisci nulla nobis at expedita possimus rerum, assumenda
+              quibusdam. Obcaecati facilis nostrum quos.
+            </p>
+
+            <br />
+
+            <h5 className="mt-4 mb-3"> Rating Analytics</h5>
+            <div className="ratingSection d-flex align-items-center ">
+              <div className="ratingrow">
+                <span className="col1">
+                  <span className="rating">5</span>
+                  <span>⭐ Star</span>
+                </span>
+                <div className="col2">
+                  {" "}
+                  <LinearProgress variant="determinate" value={80} />
+                </div>
+                <div className="col3">(22)</div>
               </div>
             </div>
           </div>
