@@ -1,16 +1,11 @@
 @import url("https://cdn.tailwindcss.com");
-.product-right-content {
-  padding: 90px 30px;
-  padding-bottom: 10px;
-}
+
 .productdashboardBoxWrapper {
   margin: 0 auto;
   padding: 90px 30px;
   background: transparent !important;
   background-color: #f3f4f6;
 }
-
-
 
 .grid {
   display: grid;

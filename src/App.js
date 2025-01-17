@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "./components/SideBar/SideBar.css";
+import "./pages/ProductDetails/ProductDetails.css"
 import "./pages/Dashboard/dashboard.css";
 import "./pages/Login/login.css";
 import "./pages/Product/product.css";

@@ -1,0 +1,27 @@
+.productDetailsSection .productInfo .icon {
+  width: 18%;
+  flex: 0 0 20%;
+}
+.productDetailsSection .productInfo .name {
+  width: 82%;
+  flex: 0 0 80%;
+  font-weight: 600;
+
+  font-size: 15px;
+}
+body.dark .productDetailsSection .productInfo .name {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.productDetailsSection .productInfo .row {
+  margin-bottom: 10px !important;
+}
+.productDetailsSection .productInfo .icon svg {
+  font-size: 22px;
+}
+
+.productDetailsSection .productInfo .row .col-sm-7 span {
+  opacity: 0.8;
+  font-size: 15px;
+  padding-left: 30px !important;
+}

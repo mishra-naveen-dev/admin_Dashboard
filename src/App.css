@@ -412,9 +412,12 @@ body.dark .css-1iw3t7y-MuiFormControl-root,
 body.dark .MuiSelect-select body.dark .MuiSelect-outlined,
 body.dark .css-lohd6h-MuiSvgIcon-root-MuiSelect-icon,
 body.dark em {
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
+h4 {
+  line-height: 32px;
+}
 body.dark .css-1d3z3hw-MuiOutlinedInput-notchedOutline,
 body.dark .css-j0riat-MuiSelect-nativeInput {
   border-color: rgba(255, 255, 255, 0.3) !important;
@@ -479,14 +482,37 @@ body.dark .boxChart .BoxChartWrapper div i {
   display: block !important;
 } */
 .slider-image {
-  width:70px;
-  height: 80px;
-  object-fit: cover; 
-  padding: 4px; 
+  object-fit: cover;
 }
-.slider-image2 {
-  width: 95px;
-  height: 80px; 
-  object-fit: cover; 
-  padding: 4px;
+
+.productdashboardBoxWrapper .sliderWrapper {
+  cursor: pointer !important;
+}
+
+.main-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.main-image:hover {
+  transform: scale(1.1); /* Zoom in effect */
+}
+.slider-small .slick-slide {
+  padding-right: 10px;
+  margin-top: 5px;
+}
+.slider-small .slick-slide .item {
+  border-radius: 7px !important;
+  overflow: hidden;
+}
+
+.slider-small *,
+.slider-big * {
+  transition: all 0.2s !important;
+}
+.slider-big .item {
+  overflow: hidden;
+  border-radius: 7px;
 }
