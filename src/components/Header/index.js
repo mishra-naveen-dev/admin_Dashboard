@@ -16,7 +16,9 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import Divider from "@mui/material/Divider";
 import { MyContext } from "../../App";
 import SearchBox from "../SearchBox";
-import Dashboard from "../../pages/Dashboard"; // Import Dashboard component
+
+
+import UserImg from "../UserImg"; 
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -58,7 +60,9 @@ const Header = () => {
       <div className="container-fluid w-100">
         <div className="row d-flex align-items-center w-100">
           <div className="col-sm-2 part1">
-            <Link to={"/dashboard"} className="d-flex align-items-center logo"> {/* Updated link */}
+            <Link to={"/dashboard"} className="d-flex align-items-center logo">
+              {" "}
+              {/* Updated link */}
               <img src={logo} alt="402" />
               <span className="ml-2">RAJWADASTORE</span>
             </Link>
@@ -438,14 +442,7 @@ const Header = () => {
                   className="myAcc d-flex align-items-center"
                   onClick={handleOpenMyAcc}
                 >
-                  <div className="userImg">
-                    <span className="rounded-circle">
-                      <img
-                        src="https://www.w3schools.com/howto/img_avatar.png"
-                        alt="user"
-                      />
-                    </span>
-                  </div>
+                  <UserImg img="https://www.w3schools.com/howto/img_avatar.png" />
                   <div className="userInfo">
                     <h4>Neeraj Mishra</h4>
                     <p className="  mb-0">@neerajm47</p>

@@ -9,7 +9,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "./components/SideBar/SideBar.css";
-import "./pages/ProductDetails/ProductDetails.css"
+import "./pages/ProductDetails/ProductDetails.css";
 import "./pages/Dashboard/dashboard.css";
 import "./pages/Login/login.css";
 import "./pages/Product/product.css";
@@ -31,7 +31,7 @@ function App() {
   //
   const [isToggleSidebar, setIsToggleSidebar] = useState(false);
   //
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   //
   const [isHideSidebarAndHeader, setIsHideSidebarAndHeader] = useState(false);
   const [themeMode, setThemeMode] = useState(true);
