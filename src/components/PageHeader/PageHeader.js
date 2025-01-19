@@ -28,7 +28,7 @@ const PageHeader = ({ pageName }) => {
             className="hover:underline flex items-center"
             style={{ textDecoration: "none", fontSize: "18px" }}
           >
-            {React.cloneElement(link.icon, { className: " ml-3" })} ~
+            {React.cloneElement(link.icon, { className: " ml-3" })}
             <span className="ml-1">{link.name}</span>
           </Link>
         ))}

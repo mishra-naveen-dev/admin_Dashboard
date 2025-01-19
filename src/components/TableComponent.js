@@ -262,9 +262,10 @@ const TableComponent = () => {
                  
                     <Link to="/product/details"><Button className="secondary" color="secondary"><FaEye />   </Button></Link>
                  
+                    <Link to="/product/upload">
                   <Button className="success" color="success">
                     <HiPencilAlt />
-                  </Button>
+                  </Button></Link>
                   <Button className="error" color="error">
                     <MdDelete />
                   </Button>
