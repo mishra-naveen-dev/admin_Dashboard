@@ -13,6 +13,7 @@ import "./pages/ProductDetails/ProductDetails.css";
 import "./pages/Dashboard/dashboard.css";
 import "./pages/Login/login.css";
 import "./pages/Product/product.css";
+import "./pages/ProductUpload/ProductUpload.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 const Dashboard = lazy(() => import("./pages/Dashboard"));
@@ -22,6 +23,7 @@ const Login = lazy(() => import("./pages/Login"));
 const SignUp = lazy(() => import("./pages/SignUp"));
 const Product = lazy(() => import("./pages/Product"));
 const ProductDetails = lazy(() => import("./pages/ProductDetails"));
+const ProductUpload = lazy(() => import("./pages/ProductUpload"));
 
 const Footer = lazy(() => import("./components/Footer/Footer"));
 
@@ -92,6 +94,11 @@ function App() {
                   path="/product/details"
                   exact={true}
                   element={<ProductDetails />}
+                />
+                <Route
+                  path="/product/upload"
+                  exact={true}
+                  element={<ProductUpload />}
                 />
               </Routes>
               <Footer />

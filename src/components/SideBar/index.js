@@ -94,8 +94,9 @@ const SideBar = () => {
                 <li>
                   <Link to="/product/details">Product View</Link>
                 </li>
+
                 <li>
-                  <Link to="#">Product Upload</Link>
+                  <Link to="/product/upload">Product Upload</Link>
                 </li>
               </ul>
             </div>
