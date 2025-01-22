@@ -133,52 +133,6 @@ const ProductUpload = () => {
                   placeholder="Add Tags..."
                 />
               </div>
-              <Button type="submit" variant="contained" color="primary">
-                Submit
-              </Button>
-            </div>
-          </div>
-
-          {/* Organization Section */}
-          <div className="col-md-5">
-            <div className="card p-4">
-              <h5>Organization</h5>
-              <div className="form-group">
-                <h6>ADD CATEGORY</h6>
-                <input
-                  type="text"
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                  placeholder="Add Category..."
-                />
-              </div>
-              <div className="form-group">
-                <h6>ADD BRAND</h6>
-                <input
-                  type="text"
-                  value={brand}
-                  onChange={(e) => setBrand(e.target.value)}
-                  placeholder="Add Brand..."
-                />
-              </div>
-              <div className="form-group">
-                <h6>ADD COLOR</h6>
-                <input
-                  type="text"
-                  value={color}
-                  onChange={(e) => setColor(e.target.value)}
-                  placeholder="Add Color..."
-                />
-              </div>
-              <div className="form-group">
-                <h6>ADD SIZE</h6>
-                <input
-                  type="text"
-                  value={size}
-                  onChange={(e) => setSize(e.target.value)}
-                  placeholder="Add Size..."
-                />
-              </div>
             </div>
           </div>
 
@@ -225,6 +179,49 @@ const ProductUpload = () => {
             </div>
           </div>
 
+          {/* Organization Section */}
+          <div className="col-md-5 mt-3">
+            <div className="card p-4">
+              <h5>Organization</h5>
+              <div className="form-group">
+                <h6>ADD CATEGORY</h6>
+                <input
+                  type="text"
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                  placeholder="Add Category..."
+                />
+              </div>
+              <div className="form-group">
+                <h6>ADD BRAND</h6>
+                <input
+                  type="text"
+                  value={brand}
+                  onChange={(e) => setBrand(e.target.value)}
+                  placeholder="Add Brand..."
+                />
+              </div>
+              <div className="form-group">
+                <h6>ADD COLOR</h6>
+                <input
+                  type="text"
+                  value={color}
+                  onChange={(e) => setColor(e.target.value)}
+                  placeholder="Add Color..."
+                />
+              </div>
+              <div className="form-group">
+                <h6>ADD SIZE</h6>
+                <input
+                  type="text"
+                  value={size}
+                  onChange={(e) => setSize(e.target.value)}
+                  placeholder="Add Size..."
+                />
+              </div>
+            </div>
+          </div>
+
           {/* Image Upload Section */}
           <div className="col-md-5 mt-3">
             <div className="card p-4">
@@ -259,6 +256,13 @@ const ProductUpload = () => {
             </div>
           </div>
         </div>
+        <Button
+          type="submit"
+          variant="contained"
+          className="btn-bule btn-lg btn-big mt-3 w-100"
+        >
+          Submit
+        </Button>
       </form>
     </div>
   );

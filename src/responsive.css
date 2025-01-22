@@ -1,0 +1,486 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+/* css reset */
+
+body {
+  font-family: "Open Sans", sans-serif !important;
+  background: #ebe9e9 !important;
+}
+::-webkit-scrollbar {
+  width: 5px !important;
+  height: 5px !important;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc !important;
+}
+
+.full {
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
+  width: 100% !important;
+}
+
+.btn-blue {
+  background: #0858f7 !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  border-radius: 5px !important;
+  text-transform: capitalize !important;
+  border-radius: 8px !important;
+}
+.btn-blue:hover {
+  background: #0858f5 !important;
+}
+.btn-lg {
+  padding: 10px 25px !important;
+  font-size: 16px !important;
+}
+.btn-big {
+  padding: 10px 25px !important;
+  font-size: 16px !important;
+  text-transform: uppercase;
+}
+
+.btn-round {
+  border-radius: 30px !important;
+}
+.btn-white {
+  background: #fff !important;
+  font-size: 14px !important;
+  font-weight: 600;
+  color: #000 !important;
+  border-radius: 10px !important;
+  text-transform: capitalize !important;
+}
+header {
+  width: 100%;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.5) !important;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+header .part2 {
+  padding-left: 50px;
+}
+
+header .logo {
+  text-decoration: none !important;
+}
+
+header .logo img {
+  width: 60px;
+  border-radius: 10px !important;
+}
+
+header .logo span {
+  font-size: 24px;
+  font-weight: 800;
+  color: #292929;
+}
+
+header button.rounded-circle {
+  background: #f0f5ff !important;
+  min-width: 40px !important;
+  width: 40px !important;
+  height: 40px !important;
+  color: #0156ff;
+}
+
+header button.rounded-circle svg {
+  color: #292929;
+  font-size: 24px !important;
+  transition: all 0.2s ease;
+}
+header button.rounded-circle svg:hover {
+  color: #0156ff !important;
+}
+
+.searchBox {
+  gap: 5px !important;
+  width: 900px !important;
+  height: 43px;
+  background: #f0f5ff;
+  border-radius: 6px;
+  padding: 3px 15px !important;
+}
+.searchBox input {
+  border: 0px;
+  outline: none;
+  background: transparent;
+  padding-left: 0px;
+  font-size: 14px;
+  color: #292929;
+}
+.searchBox input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+.searchBox svg {
+  font-size: 17px;
+  color: #292929;
+}
+.myAcc {
+  align-items: center;
+  text-align: left !important;
+  color: #0156ff !important;
+  text-transform: capitalize !important;
+}
+
+.userImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 47px;
+  height: 47px;
+  cursor: pointer;
+  border: 2px solid #0858f7;
+  padding: 3px;
+  border-radius: 100%;
+}
+
+.userImg .rounded-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f0f5ff;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+}
+
+.userImg .rounded-circle img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.userImg.lg {
+  width: 60px !important;
+  height: 60px !important;
+}
+
+.myAcc .userInfo {
+  padding-left: 10px;
+}
+.myAcc .userInfo h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  color: #292929;
+  line-height: 14px;
+}
+.myAcc .userInfo p {
+  margin-top: 0px;
+  font-size: 12px;
+  color: #000;
+  opacity: 0.7;
+}
+
+#account-menu li {
+  font-size: 14px !important;
+  padding: 12px 15px !important;
+}
+
+#account-menu li svg {
+  font-size: 20px !important;
+}
+#notifications .MuiPaper-elevation {
+  right: 240px !important;
+  width: 300px !important;
+  left: auto !important;
+  top: 70px !important;
+}
+
+.dropdown_list .head {
+  padding: 10px 0px;
+}
+.dropdown_list .head h4 {
+  font-size: 17px !important;
+  font-weight: 600;
+}
+.dropdown_list li.MuiButtonBase-root {
+  background: #ebf6ff !important;
+  color: #000 !important;
+  padding: 10px 15px !important;
+}
+.dropdown_list li.MuiButtonBase-root:hover {
+  background: #c6cbcf !important ;
+}
+.dropdownInfo {
+  padding-left: 15px;
+}
+.dropdownInfo h4 {
+  font-size: 13px;
+  font-weight: 500;
+  white-space: break-spaces;
+  line-height: 21px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.dropdownInfo h4 b {
+  font-weight: 600;
+  margin-right: 5px;
+}
+.dropdownInfo p {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 0px;
+}
+.text-sky {
+  color: #0858f7 !important;
+  font-weight: 600 !important;
+}
+
+.dropdown_list .menu-scroll-container {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 8px;
+  overflow-x: 0px;
+}
+
+.dropdown_list .menu-scroll-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown_list .menu-scroll-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.dropdown_list .menu-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.main .sidebarWrapper {
+  width: 20%;
+  flex: 0 0 20%;
+  transition: all 0.3s ease-in-out;
+}
+.main .sidebarWrapper.toggle {
+  width: 0%;
+  flex: 0 0 0%;
+}
+
+.main .sidebarWrapper .sidebar {
+  width: 20%;
+  height: 100vh;
+  position: fixed;
+  top: 70px;
+  left: 0px;
+  background: #fff;
+  max-width: calc(100% - 70px) !important;
+  overflow-y: auto !important; /* Ensure vertical scrolling is enabled */
+  overflow-x: hidden !important;
+  padding-bottom: 55px !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.main .sidebarWrapper.toggle .sidebar {
+  left: -100%;
+}
+
+.main .sidebarWrapper .sidebar ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main .sidebarWrapper .sidebar ::-webkit-scrollbar-thumb {
+  background: #0858f7 !important;
+  border-radius: 4px;
+}
+
+.main .sidebarWrapper .sidebar ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.main .contentWrapper {
+  width: 80%;
+  flex: 0 0 80%;
+  transition: all 0.3s ease-in-out;
+}
+.main .contentWrapper.toggle {
+  width: 100%;
+  flex: 0 0 100%;
+}
+
+/* dark and light theme  */
+body.dark {
+  background: #071739 !important;
+}
+
+body.dark header {
+  background: #112143 !important;
+}
+body.dark header .logo span {
+  color: #fff !important;
+  opacity: 0.9 !important;
+}
+body.dark header button.rounded-circle {
+  background: #122755 !important;
+}
+body.dark header button.rounded-circle svg {
+  color: #fff !important;
+}
+body.dark .searchBox {
+  background: #12254e !important;
+}
+body.dark .searchBox input,
+body.dark .searchBox input::-webkit-input-placeholder,
+body.dark .searchBox svg {
+  color: #fff !important;
+}
+body.dark .myAcc {
+  color: #fff !important;
+}
+
+body.dark .myAcc .userInfo * {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+body.dark .MuiPaper-elevation {
+  background: #12254e !important;
+}
+
+body.dark .MuiPaper-elevation li *,
+body.dark .MuiPaper-elevation li {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+body.dark .dropdown_list li.MuiButtonBase-root {
+  background-color: #12254e !important;
+  background: #12254e !important;
+}
+body.dark .dropdown_list .head h4 {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+body.dark .main .sidebarWrapper .sidebar {
+  background: #12254e !important;
+}
+
+body.dark .main .sidebarWrapper .sidebar ul li button {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+body.dark .main .sidebarWrapper .sidebar ul li button svg {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+body.dark .main .sidebarWrapper .sidebar ul li button.active {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark .main .sidebarWrapper .sidebar ul li button.active .icon svg {
+  color: #2605e3 !important;
+}
+body.dark .main .sidebarWrapper .sidebar ul li button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+body.dark main .contentWrapper {
+  background: #12254e !important;
+}
+body.dark .main .sidebarWrapper .sidebar ul .submenu::before {
+  background: rgba(255, 255, 255, 0.2);
+}
+body.dark .main .sidebarWrapper .sidebar ul .submenu li a {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+body.dark .main .sidebarWrapper .sidebar ul .submenu li a:hover {
+  color: #0858f7 !important;
+}
+body.dark .logoutWrapper .logoutBox {
+  background-image: linear-gradient(#183e8c, #163474) !important;
+  background: transparent !important;
+}
+body.dark .card {
+  background: #112143 !important ;
+}
+body.dark .card .hd {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.8);
+}
+body.dark .cardFilters .col-md-3 h4 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+body.dark .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark p,
+body.dark span,
+body.dark .css-1iw3t7y-MuiFormControl-root,
+body.dark .MuiSelect-select body.dark .MuiSelect-outlined,
+body.dark .css-lohd6h-MuiSvgIcon-root-MuiSelect-icon,
+body.dark em {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+h4 {
+  line-height: 32px;
+}
+p {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 25px;
+}
+body.dark .css-1d3z3hw-MuiOutlinedInput-notchedOutline,
+body.dark .css-j0riat-MuiSelect-nativeInput {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+body.dark .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+body.dark table td {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+body.dark .table-bordered td,
+.table-bordered th {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+body.dark .css-1bug3cd-MuiButtonBase-root-MuiPaginationItem-root:hover {
+  background: #0858f7 !important;
+  color: #fff !important;
+}
+body.dark .css-1bug3cd-MuiButtonBase-root-MuiPaginationItem-root {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+body.dark .table-responsive::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+body.dark .BoxChartWrapper {
+  background: #112143 !important ;
+}
+
+body.dark .boxChart {
+  background: #112143 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.dark .boxChart .BoxChartWrapper {
+  background: #112143 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.dark .boxChart .BoxChartWrapper div {
+  background: #112143 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.dark .boxChart .BoxChartWrapper div h2 {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.dark .boxChart .BoxChartWrapper div p {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.dark .boxChart .BoxChartWrapper div i {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
